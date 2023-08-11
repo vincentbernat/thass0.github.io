@@ -1,7 +1,7 @@
 # Setup
 title:               'Effective program synthesis'
 tagline:             'A technical blog'
-description:         'My personal technical blog about problems I find intriguing. I would love to hear from you! Feel free to reach out through my <a href="https://d4ckard.github.io">about page</a>.'
+description:         'My personal technical blog about problems I find intriguing. I would love to hear from you! Feel free to reach out through my <a href="https://d4ckard.github.io/about/">about page</a>.'
 url:                 https://d4ckard.github.io
 baseurl:             ''
 paginate:            5
@@ -12,6 +12,19 @@ author:
   name:              Thassilo Schulze
   url:               https://github.com/d4ckard
   email:             thassilo.schulze@posteo.de
+
+social:
+  - name: Twitter
+    url: https://twitter.com/d4kdd
+
+  - name: GitHub
+    url: https://github.com/d4ckard
+
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/thassilo-schulze
+
+  - name: Discord
+    url: https://discordapp.com/users/566594351522906123
 
 # Gems
 plugins:

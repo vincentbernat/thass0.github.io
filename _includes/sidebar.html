@@ -27,6 +27,18 @@
   </nav>
 
   <div class="sidebar-item">
+    <div id="contact-list" style="text-align:center">
+      {% for social in site.social %}
+      <p>
+      <a href="{{social.url}}">
+	{{social.name}}
+      </a>
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="sidebar-item">
     <p>
       &copy; {{ site.time | date: '%Y' }}. All rights reserved.
     </p>
