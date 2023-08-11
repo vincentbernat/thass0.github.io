@@ -1,0 +1,18 @@
+# Setup
+title:               'Effective program synthesis'
+tagline:             'A technical blog'
+description:         'My personal technical blog about problems I find intriguing. I would love to hear from you! Feel free to reach out through my <a href="https://d4ckard.github.io">about page</a>.'
+url:                 https://d4ckard.github.io
+baseurl:             ''
+paginate:            5
+permalink:           pretty
+
+# About/contact
+author:
+  name:              Thassilo Schulze
+  url:               https://github.com/d4ckard
+  email:             thassilo.schulze@posteo.de
+
+# Gems
+plugins:
+  - jekyll-paginate
