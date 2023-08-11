@@ -225,8 +225,8 @@ extern "C" void *make_rational(int numer, int denom) {
 ```
 In such a simple case it's also feasible to check if the denominator is 0 in `make_rational` but that doesn't apply to more realistic examples.
 
-You can find all the code for this post [on my GitHub](LINK).
+You can find all the code for this post [on my GitHub](https://github.com/d4ckard/blog-code/tree/main/2023-08-11-calling-c%2B%2B-code-from-c).
 
 # Conclusion
 
-I ended up not using libelfin for my debugger, but I am glad that I had this opportunity to learn so much about calling C++ code from C. This is the first time that I documented any of the insights I discovered about a particular problem, and I am excited to find out what you think about it. Feel free to contact me through my [about page](LINK). Your insights and perspectives would be greatly appreciated. I am committed to write more post like this one in the future and I hope you found it helpful ^^.
+I ended up not using libelfin for my debugger, but I am glad that I had this opportunity to learn so much about calling C++ code from C. This is the first time that I documented any of the insights I discovered about a particular problem, and I am excited to find out what you think about it. Feel free to contact me through my [about page]({{ '/about' | absolute_url }}). Your insights and perspectives would be greatly appreciated. I am committed to write more post like this one in the future and I hope you found it helpful ^^.
