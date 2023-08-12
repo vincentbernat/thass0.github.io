@@ -29,3 +29,5 @@ social:
 # Gems
 plugins:
   - jekyll-paginate
+
+exclude: ["blog-code", "README.md"]
