@@ -3,7 +3,7 @@ layout: post
 title: Can you use a class in C?
 ---
 
-Recently, I've been working on a C debugger. This requires reading and processing the DWARF debugging information that's part of the binary. Since this is a rather complex task, I figured I  might use a library that exports a nice interface to the debugging information.
+Recently, I've been [working on a C debugger](https://github.com/d4ckard/spray). This requires reading and processing the DWARF debugging information that's part of the binary. Since this is a rather complex task, I figured I  might use a library that exports a nice interface to the debugging information.
 
 One such library that I found early on was [libelfin](https://github.com/aclements/libelfin). It wasn't perfect from that start because it is a bit dated now, only supporting DWARF 4 and missing features from the newer DWARF 5 standard, but I thought that I could work around this. The bigger problem was that libelfin is written in C++ while most the debugger is written in C.
 
