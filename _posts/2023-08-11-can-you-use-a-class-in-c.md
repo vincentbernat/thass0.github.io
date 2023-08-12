@@ -1,14 +1,13 @@
 ---
 layout: post
-title: Calling C++ code from C
+title: Can you use a class in C?
 ---
 
-
-Recently, I've been working on a debugger for debugging C code. This requires reading and processing the DWARF debugging information that's part of the binary. Since this is a rather complex task, I figured I  might use a library that exports a nice interface to the debugging information.
+Recently, I've been working on a C debugger. This requires reading and processing the DWARF debugging information that's part of the binary. Since this is a rather complex task, I figured I  might use a library that exports a nice interface to the debugging information.
 
 One such library that I found early on was [libelfin](https://github.com/aclements/libelfin). It wasn't perfect from that start because it is a bit dated now, only supporting DWARF 4 and missing features from the newer DWARF 5 standard, but I thought that I could work around this. The bigger problem was that libelfin is written in C++ while most the debugger is written in C.
 
-I was shocked to find out that there isn't really a lot of material on the web explaining how to call C++ code from C. It is pretty easy to call code written in C from C++ since a lot of C is still part of the subset of C that C++ supports. The problem with calling C++ code from C is that there are many features in C++ that C is missing. This means that the C++ interface must be simplified for C to be able to understand it.
+It is pretty easy to call code written in C from C++ since a lot of C is still part of the subset of C that C++ supports. The problem with calling C++ code from C is that there are many features in C++ that C is missing. This means that the C++ interface must be simplified for C to be able to understand it.
 
 # Handling objects
 
@@ -153,7 +152,8 @@ gcc main.c rational.o
 ./a.out
 1.000000 0.500000
 ```
-We successfully created a class in C++ and created an interface to it that is compatible with C!
+
+We successfully created a class in C++ that we can now use in C!
 
 # Linking the C++ standard library
 
