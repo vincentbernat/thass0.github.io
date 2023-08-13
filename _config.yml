@@ -2,7 +2,7 @@
 title:               'Effective program synthesis'
 tagline:             'A technical blog'
 description:         'My personal technical blog about problems I find intriguing. I would love to hear from you! Feel free to reach out through my <a href="https://d4ckard.github.io/about/">about page</a>.'
-url:                 https://d4ckard.github.io
+url:                 https://thasso.xyz
 baseurl:             ''
 paginate:            5
 permalink:           pretty
