@@ -61,8 +61,8 @@ We need to extend our interface with all the new functions to construct, access 
 class Rational { /* ... */ };
 
 void *make_rational(int numer, int denom);
-int get_numer(void *r);
-int get_denom(void *r);
+int get_numer(const void *r);
+int get_denom(const void *r);
 void del_rational(void **rp);
 ```
 ```c++
@@ -72,20 +72,20 @@ void del_rational(void **rp);
 
 void *make_rational(int numer, int denom) {
   // Allocate an instance on the heap.
-    Rational *r = static_cast<Rational*>(malloc(sizeof(Rational)));
+  Rational *r = static_cast<Rational*>(malloc(sizeof(Rational)));
   r->_numer = numer;
   r->_denom = denom;
   return r;
 }
 
-int get_numer(void *r) {
+int get_numer(const void *r) {
   // Cast to access members.
-  Rational *_r = static_cast<Rational*>(r);
+  const Rational *_r = static_cast<const Rational*>(r);
   return _r->_numer;
 }
 
-int get_denom(void *r) {
-  Rational *_r = static_cast<Rational*>(r);
+int get_denom(const void *r) {
+  const Rational *_r = static_cast<const Rational*>(r);
   return _r->_denom;
 }
 
@@ -99,7 +99,7 @@ void del_rational(void **rp) {
 }
 
 ```
-The trick is to **allocate instances on heap and then pass them around as `void` pointers**. We use C's `malloc` instead of the `new` operator because the `new` operator is a C++ only feature which raises a linker error. You could also wrap this pointer in a `struct` to add a bit of type safety, but the basic mechanism doesn't change. Alternatively, if you have control over all of the C++ code (i.e. you don't just wrap a library) you could follow [this Stack Overflow answer](https://stackoverflow.com/a/7281477) too.
+The trick is to **allocate instances on heap and then pass them around as `void` pointers**. We use C's `malloc` instead of the `new` operator because the `new` operator is a C++ only feature which raises a linker error. A good way to improve type safety is to `typedef` an opaque type to represent the class on the C side, as suggested in [this reply](https://github.com/d4ckard/blog-code/issues/1#issue-1848643298). This is the approach that we'll be using later on, so keep on reading. Alternatively, if you have control over all of the C++ code (i.e. you don't just wrap a library) you could follow [this Stack Overflow answer](https://stackoverflow.com/a/7281477) too.
 
 Now, ignoring how incredibly unsafe all of this is, there is a bigger problem we must face: this is not even close to compiling!
 The reason for this is that when we `#include "rational.h"` into `main.c`, we essentially copy all the contents of `rational.h` into the C source file. This means that we suddenly present the C compiler with a class declaration and other things that it doesn't understand because they are part of a totally different language.
@@ -124,36 +124,55 @@ Using the two different compilers to build, the program could look like this: `g
 
 Great it compiles! But uhh ... now the linker signals an error. There are two problems left to fix. Firstly C++ uses a different [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) than C which means that the calling convention is different. Additionally, C++ compilers mangle the names of identifiers in the source code differently than C compilers do, so the linker can't find them. Fortunately, C is the *lingua franca* of computer programming so C++ compilers can adapt their behavior in both of these aspects to that of C compilers. To do so, we just **prefix all C++ declarations that should be used by C code with `extern "C"`**.
 
-This is very simple to do in the `rational.cc` source file, but requires some extra smartness in `rational.h`. Again, `extern "C"` is only a C++ feature, so it cannot be part of the header when the C compiler is looking at it. The solution to this is to use the `__cplusplus` macro once more. [This answer](https://stackoverflow.com/a/2744206) on Stack Overflow suggests a neat way of doing so:
+This is very simple to do in the `rational.cc` source file, but requires some extra smartness in `rational.h`. Again, `extern "C"` is only a C++ feature, so it cannot be part of the header when the C compiler is looking at it. The solution to this is to use the `__cplusplus` macro once more.
 ```c++
 // rational.h
 #ifdef __cplusplus
 class Rational { /* ... */ };
 #endif  // __cplusplus
 
+
 #ifdef __cplusplus
-#define extern_c extern "C"
-#else
-#define extern_c
+extern "C" {
 #endif  // __cplusplus
 
-extern_c void *make_rational(int numer, int denom);
-extern_c int get_numer(void *r);
-extern_c int get_denom(void *r);
-extern_c void del_rational(void **rp);
+void *make_rational(int numer, int denom);
+int get_numer(const void *r);
+int get_denom(const void *r);
+void del_rational(void **rp);
 
-#undef extern_c
+#ifdef __cplusplus
+}  // extern "C"
+#endif  // __cplusplus
+
 ```
 
-After making those changes to `rational.h` and `rational.cc` we get the following output.
+This wraps all of the function definitions in an `extern "C"` block when the C++ compiler is looking at it. After making those changes to `rational.h` and `rational.cc` we get the following output.
 ```sh
 g++ -c rational.cc
 gcc main.c rational.o
 ./a.out
-1.000000 0.500000
+5 / 3
 ```
 
 We successfully created a class in C++ that we can now use in C!
+
+Now that we have covered how to use the preprocessor to change the content of a file based on the compiler that's looking at it, we can make the API a bit safer, too. To do that we create an opaque type that acts a proxy for the `Rational` class on the C side. By only declaring this type, the C compiler will ensure that the pointers passed around in the interface are all of the same type (i.e. `Rational`). However, it won't let you dereference the pointers because the type is never really defined.
+```c++
+#ifdef __cplusplus
+
+class Rational {
+	// ...
+};
+
+#else
+
+// Opaque type as a C proxy for the class.
+typedef struct Rational Rational;
+
+#endif // __cplusplus
+```
+In addition to that we now replace all `void *` with `Rational *`. This will allow you to remote some of the `static_cast`s from the beginning.
 
 # Linking the C++ standard library
 
@@ -164,7 +183,7 @@ With `new` we can also use normal C++ constructors, making everything more conci
 // rational.cc
 #include "rational.h"
 
-extern "C" void *make_rational(int numer, int denom) {
+extern "C" Rational *make_rational(int numer, int denom) {
   // Now we're using the constructor.
   Rational *r = new Rational(numer, denom);
   return r;
@@ -172,9 +191,8 @@ extern "C" void *make_rational(int numer, int denom) {
 
 // ...
 
-extern "C" void del_rational(void **rp) {
-  Rational *_r = static_cast<Rational*>(*rp);
-  delete _r;
+extern "C" void del_rational(Rational **rp) {
+  delete *rp;
   *rp = nullptr;
 }
 ```
@@ -213,7 +231,7 @@ Since we know now that the constructor might throw, we catch all exceptions in t
 // rational.cc
 #include "rational.h"
 
-extern "C" void *make_rational(int numer, int denom) {
+extern "C" Rational *make_rational(int numer, int denom) {
   try {
     // Allocate an instance on the heap.
     Rational *r = new Rational(numer, denom);
