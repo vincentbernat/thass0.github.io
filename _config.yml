@@ -26,6 +26,9 @@ social:
   - name: Discord
     url: https://discordapp.com/users/566594351522906123
 
+  - name: RSS
+    url: https://thasso.xyz/atom.xml
+
 # Gems
 plugins:
   - jekyll-paginate

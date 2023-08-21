@@ -1,0 +1,11 @@
+/* Line with links to share the post below post date. */
+.post-share {
+  display: block;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a;
+}
+
+.post-share:target {
+  background-color: #ffffe1;
+}
