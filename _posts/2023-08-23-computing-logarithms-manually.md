@@ -5,7 +5,7 @@ title: Computing logarithms manually
 
 I have become fascinated by the ability to reason about and calculate the results of logarithmic functions in one's head. To me, logarithms have always felt like a black box that couldn't be conquered. They are a fundamental building block of mathematics, yet every time I saw a logarithmic equation, I was tempted to grab my calculator or to look up how to solve the example at hand. Over the past half year, I've spent some time improving my understanding of logarithms and learning how to compute the results of logarithmic equations by hand. Here is what I've found!
 
-## Why learn this?
+# Why learn this?
 
 To me, the ability of computing logarithms in one's head or at least purely by hand on paper would be greatly desirable. The number of new concepts we can hold in [working memory](https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two) at any point in time is limited, so it makes sense to internalize as many conceptual building blocks as possible. This will allow you to reduce the amount of time spent on thought that's not problem-centric. For example, you'll be much more comfortable dealing with complex logarithmic equations etc. if you have a good intuition for basic logarithms themselves.
 
@@ -25,6 +25,32 @@ For example, what's the square root of $17$? Not knowing how to algorithmically 
 
 I hope that you see why this is so exciting! By pure memorization of a few example values and by internalizing the relationships of the operations we need by drilling them, it's possible to make very fast guesses about otherwise complex computations. To prove my point, let's find out how close we got. $4 + \frac{1}{9} \approx 4.111$ and $\sqrt{17} \approx 4.123$: our guess was off by only $0.012$. Imagine if you could approximate something like $log_{10}(64)$ just as quickly!
 
+
+# Powers, roots and logarithms
+
+There is [some confusion](https://math.stackexchange.com/questions/3693149/isnt-square-root-a-bit-like-log) as to what the relationship between powers, roots and logarithms is. The operations we use more often than exponentiation, that is addition and multiplication are both commutative. This means that $a + b = b + a$ and $a \cdot b = b \cdot a$: we can exchange the sequence of the operands freely. That is not the case for powers. Generally, $a^b$ doesn't necessary have to be the same as  $b^a$. In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^2 = 16$.
+
+The fact that [exponentiation is not commutative](https://en.wikipedia.org/wiki/Commutative_property#Division,_subtraction,_and_exponentiation) means that it has **two different inverse operations: the nth-root and the logarithm**. Understanding this is very important. There is nothing special about a binary operation having two different inverse functions. After all, if we have binary operation [represented as a function] $c = a \circ b$ we want to be able to both get $a$ from $c$ and $b$ and $b$ from $c$ and $a$ [^4]. For commutative operations like addition and multiplication, getting either $a$ or $b$ just happens to involve the same operation.
+
+If way say that $x = b^n$, then the nth-root is defined as $b = \sqrt[n]{x}$. A sentence that describes what's happening here declaratively might so as follows: "the nth-root of a number x yields the base b, such that b to the power of n is equal to x". This can also be phrased as a question were the result value of the nth-root is seen as the answer to that question: "what's be base b such that b to the power of n is equal to x?".
+
+Given the two variables of the exponentiation $x$ and $n$, the roots yields the third one $b$. Accordingly, the logarithm, which is just the other inverse function for powers, yields the other parameter $n$ from $x$ and $b$: $log_b(x) = n$. The fitting questing would be: "what's the exponent n of b such that b to the power of n is equal to x?". As you can see, the question describing the operation has exactly the same structure with a different sequence. The part that's hard to think here is the "such that" part of the question. We basically have to think in reverse to answer the it. That's the difficulty of inverse functions.
+
+I'd also like to share a figure that helped me improve my understanding of the relationship between the three functions.
+
+![Relationship between powers, roots and logarithms]({{ '/public/figures/relationship-power-root-logarithm.png' | absolute_path}})
+
+It stems from a German mathematics textbook from 1997 called Handbuch Mathematik [^5] which translates to <i>Handbook Mathematics</i>. The caption reads <i>Relationship between power, root and logarithm or between value of power, base and exponent</i>. I added the context about this figure's origin to make this part more memorable because this triangular relationship is key. [This answer](https://math.stackexchange.com/a/165225) on Stack Exchange builds on the same idea to suggest an alternative notation for powers, roots and logarithms that emphasizes this relationship.
+
+# Definition of logarithms
+
+As described above, given the result of an exponentiation $y = b^x$ and the base $b$, $x$ is called the logarithm of $y$ to the base $b$ which is written as $x = log_b(y)$ [^6]. This definition provides us with the following identities:
+
+$$x = b^{log_b(x)} = log_b({b^x})$$
+
+. Both of these are very important. Ideally, you'd want them to come to mind every time you're looking to solve an equation involving logarithms. While they're often given as the very basics, their *reverseness* makes them difficult to think about.
+
+---
 
 [^1]: This is about how difficult the calculation feels and how long it takes to carry out, not about how hard it would theoretically be, given you knew all possible algorithms, tricks and exceptions.
 
