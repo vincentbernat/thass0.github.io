@@ -3,7 +3,7 @@ layout: post
 title: Computing logarithms manually
 ---
 
-I have become fascinated by the ability to reason about and calculate the results of logarithmic functions in one's head. To me, logarithms have always felt like a black box that couldn't be conquered. They are a fundamental building block of mathematics, yet every time I saw a logarithmic equation, I was tempted to grab my calculator or to look up how to solve the example at hand. Over the past half year, I've spent some time improving my understanding of logarithms and learning how to compute the results of logarithmic equations by hand. Here is what I've found!
+I have become fascinated by the ability to calculate logarithmic functions in one's head. To me, logarithms have always felt like a black box that couldn't be conquered. They are a fundamental building block of mathematics, yet every time I saw a logarithmic equation, I was tempted to grab my calculator or to look up how to solve the example at hand. Over the past half year, I've spent some time improving my understanding of logarithms and learning how to compute the results of logarithmic equations by hand. Here is what I've found!
 
 # Why learn this?
 
@@ -30,7 +30,7 @@ I hope that you see why this is so exciting! By pure memorization of a few examp
 
 There is [some confusion](https://math.stackexchange.com/questions/3693149/isnt-square-root-a-bit-like-log) as to what the relationship between powers, roots and logarithms is. The operations we use more often than exponentiation, that is addition and multiplication are both commutative. This means that $a + b = b + a$ and $a \cdot b = b \cdot a$: we can exchange the sequence of the operands freely. That is not the case for powers. Generally, $a^b$ doesn't necessary have to be the same as  $b^a$. In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^2 = 16$.
 
-The fact that [exponentiation is not commutative](https://en.wikipedia.org/wiki/Commutative_property#Division,_subtraction,_and_exponentiation) means that it has **two different inverse operations: the nth-root and the logarithm**. Understanding this is very important. There is nothing special about a binary operation having two different inverse functions. After all, if we have binary operation [represented as a function] $c = a \circ b$ we want to be able to both get $a$ from $c$ and $b$ and $b$ from $c$ and $a$ [^4]. For commutative operations like addition and multiplication, getting either $a$ or $b$ just happens to involve the same operation.
+The fact that [exponentiation is not commutative](https://en.wikipedia.org/wiki/Commutative_property#Division,_subtraction,_and_exponentiation) leads to it having two inverse operations: the nth-root and the logarithm. This may seem surprising since we're so used to commutative operations like addition and multiplication that have only a single inverse operation.
 
 If way say that $x = b^n$, then the nth-root is defined as $b = \sqrt[n]{x}$. A sentence that describes what's happening here declaratively might so as follows: "the nth-root of a number x yields the base b, such that b to the power of n is equal to x". This can also be phrased as a question were the result value of the nth-root is seen as the answer to that question: "what's be base b such that b to the power of n is equal to x?".
 
@@ -44,11 +44,52 @@ It stems from a German mathematics textbook from 1997 called Handbuch Mathematik
 
 # Definition of logarithms
 
-As described above, given the result of an exponentiation $y = b^x$ and the base $b$, $x$ is called the logarithm of $y$ to the base $b$ which is written as $x = log_b(y)$ [^6]. This definition provides us with the following identities:
+Say we have an exponentiation $y = b^x$. $y$, $b$ and $x$ are real numbers with the additional constraint that $b$ must be positive. If the values of $y$ and $b$ are known, the logarithm of $y$ to the base $b$ gives us the missing value $x$. It is written as $x = log_b(y)$. The following identities can be derived from this definition [^6]:
 
-$$x = b^{log_b(x)} = log_b({b^x})$$
+$$\begin{equation}x = b^{log_b(x)} \end{equation}$$
 
-. Both of these are very important. Ideally, you'd want them to come to mind every time you're looking to solve an equation involving logarithms. While they're often given as the very basics, their *reverseness* makes them difficult to think about.
+$$x = log_b({b^x})$$
+
+. Both of these are very important. Ideally, you'd want them to come to mind every time you're looking to solve a logarithmic equation.
+While they represent the basic relationships of logarithms, their *reverseness* makes them difficult to think about already.
+
+Let's start by digesting $x = b^{log_b(x)}$. To break up the equation, we'll name the logarithm in the exponent $a = log_b(x)$. This means that, $a$ is the exponent to the base $b$ such that $b^a = x$. With this step of indirection, it's easy to see why the equation must be. It can be described a bit like this: "Raise $b$ to the power $a$ of $b$ that fulfill the property that $b^a = x$.".
+
+The second equation $x = log_b(b^x)$ is even easier to understand. I like to think about it like this: "What's the exponent $x$ to the base $b$, such that $b^x = b^x$? It's $x$!".
+
+Based on this we are also able to induce the values of a few logarithmic expressions. For example what is the value of $log_a(a)$?
+based on the laws of exponents, we can rewrite this as $log_a(a^1)$ or as $log_a(a^x)$ where $x = 1$. Now, it's obvious from the second identity that the answer is 1. The same approach works for $log_a(1)$. Rewriting this the same way by substituting $a^0$ for $1$ gives us $log_a(a^0) = 0$.
+
+## Multiplication is addition
+
+The following is another central identity which opens up a lot of possibilities for us when it comes to computing logarithms manually.
+
+$$log_b(x \cdot y) = log_b(x) + log_b(y) ~~~~ \text{if}  ~ x > 0 \text{, } y > 0$$
+
+It's proof can be constructed from the two identities above and the rules of exponents. We start by using the identity $x = b^{log_b(b)}$ from above to substitute $x$ and $y$ in the left side of the equation:
+
+$$log_b(x \cdot y) = log_b(b^{log_b(x)} \cdot b^{log_b(y)})$$
+
+. Using the rule of exponents which states that $x^a \cdot x^b = x^{a + b}$, we can simplify this into
+
+$$log_b(b^{log_b(x)} \cdot b^{log_b(y)}) = log_b(b^{log_b(x) + log_b(y)})$$
+
+. Lastly the second identity $x = log_b({b^x})$ is applied.
+
+$$log_b(b^{log_b(x) + log_b(y)}) = log_b(x) + log_b(y)$$
+
+This equation was introduced in 1614 by John Napier and is famous because it allowed [reducing complex multiplications to simple additions](https://en.wikipedia.org/wiki/Mathematical_table#Tables_of_logarithms). Instead of performing the multiplication itself, people could simply look-up the values of $log_b(x)$ and $log_b(y)$ and then add them together. This is one of the techniques we'll be using later to solve logarithmic equations manually. Instead of looking up the values in a logarithm table, we'll memorize a few key ones.
+
+
+
+
+[Connection to roots: $x^{1/n}$.]
+
+---
+
+# Maybe
+
+- Example solving a min. $n$ for min. $P(X \geq k)$ given a $p$ task manually. Could be part of a number of case studies.
 
 ---
 
@@ -57,3 +98,7 @@ $$x = b^{log_b(x)} = log_b({b^x})$$
 [^2]: For example, if you want to remember something long term, [spaced repetition](https://ncase.me/remember/) is a [much better strategy](https://gwern.net/spaced-repetition) than drilling it very intensely for a relatively short amount of time. This seems to be a common problem (or misconception) about project based learning, too. Without repetition, it's easy to forget concepts that were used only once during a single project. It also applies to learning for exams and is likely a key factor in why students don't feel motivated to  learn purely for an exam. I've found that the experience of learning during either a project or for an exam can be made much more rewarding by putting in a small amount of extra work in repeating the content a few times so that you can recall it long-term.
 
 [^3]: https://www.sciencedirect.com/topics/mathematics/inverse-operation is a starting point. Just like Knuth, it has a lot of interesting stuff to say about logarithms.
+
+[^5]: Scholl, W., & Drews, R. (1997). *Handbuch Mathematik*. Falken.
+
+[^6]: Knuth, E. (1997). *The art of computer programming: Fundamental algorithms* (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
