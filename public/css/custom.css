@@ -6,6 +6,21 @@
   color: #9a9a9a;
 }
 
+/* Any item on the page that's jumped to get's highlighted. */
 .post-share:target {
   background-color: #ffffe1;
+}
+
+/* Logo in the masthead. */
+.masthead-title img {
+    vertical-align: middle;
+    display: inline-block;
+    height: 1.4em;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 414px) {
+  .masthead-title {
+      text-align: right;
+  }
 }

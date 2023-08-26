@@ -13,8 +13,11 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
+            <a href="{{ site.baseurl }}/" title="Home">
+	      <img src="{{ '/public/favicon.ico' | absolute_url }}" alt="Logo"></img>
+	      {{ site.title }}
+	    </a>
+	    <small>{{ site.tagline }}</small>
           </h3>
         </div>
       </div>
@@ -38,3 +41,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </body>
 </html>
+
+<!--  LocalWords:  favicon.ico url
+ -->
