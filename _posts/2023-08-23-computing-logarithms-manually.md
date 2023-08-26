@@ -1,7 +1,11 @@
 ---
 layout: post
-title: Computing logarithms manually
+title: Learning some more logarithms
 ---
+
+<div class="message">
+This post was originally inspired by <a href="https://two-wrongs.com/learning-some-logarithms.html">learning some logarithms</a> by kqr. Just like his post it's about excitement and discovery, and I hope to present some of the knowledge I've gathered in an approachable way. Some parts get quite math-heavy, but they are not meant to be a formally rigid study of the topics at hand. Rather their purpose is to be practical and insightful.
+</div>
 
 I have become fascinated by the ability to calculate logarithmic functions in one's head. To me, logarithms have always felt like a black box that couldn't be conquered. They are a fundamental building block of mathematics, yet every time I saw a logarithmic equation, I was tempted to grab my calculator or to look up how to solve the example at hand. Over the past half year, I've spent some time improving my understanding of logarithms and learning how to compute the results of logarithmic equations by hand. Here is what I've found!
 
@@ -44,52 +48,107 @@ It stems from a German mathematics textbook from 1997 called Handbuch Mathematik
 
 # Definition of logarithms
 
-Say we have an exponentiation $y = b^x$. $y$, $b$ and $x$ are real numbers with the additional constraint that $b$ must be positive. If the values of $y$ and $b$ are known, the logarithm of $y$ to the base $b$ gives us the missing value $x$. It is written as $x = log_b(y)$. The following identities can be derived from this definition [^6]:
+Say we have an exponentiation $y = b^x$ where $y$, $b$ and $x$ are real numbers with the additional constraint that $b$ must be positive. If the values of $y$ and $b$ are known, the logarithm of $y$ to the base $b$ gives us the missing value $x$. It is written as $x = log_b(y)$. The following identities can be derived from this definition[^6]:
 
-$$\begin{equation}x = b^{log_b(x)} \end{equation}$$
+$$\text{(1)} ~~~ x = b^{log_b(x)} ~~~~~~ \text{(2)} ~~~ x = log_b({b^x})\text{.}$$
 
-$$x = log_b({b^x})$$
+Both of these are very important. Ideally, you'd want them to come to mind every time you're looking to solve a logarithmic equation. While they represent the basic relationships of logarithms, their *reverseness* makes them difficult to think about already.
 
-. Both of these are very important. Ideally, you'd want them to come to mind every time you're looking to solve a logarithmic equation.
-While they represent the basic relationships of logarithms, their *reverseness* makes them difficult to think about already.
+Let's start by digesting $x = b^{log_b(x)}$. To break up the equation, we'll name the logarithm in the exponent $a = log_b(x)$. This means that, $a$ is the exponent to the base $b$ such that $b^a = x$. With this step of indirection, it's easy to see why the equation must be true. It can be described a bit like this: "Raise $b$ to the power $a$ of $b$ that fulfills the property that $b^a = x$.".
 
-Let's start by digesting $x = b^{log_b(x)}$. To break up the equation, we'll name the logarithm in the exponent $a = log_b(x)$. This means that, $a$ is the exponent to the base $b$ such that $b^a = x$. With this step of indirection, it's easy to see why the equation must be. It can be described a bit like this: "Raise $b$ to the power $a$ of $b$ that fulfill the property that $b^a = x$.".
-
-The second equation $x = log_b(b^x)$ is even easier to understand. I like to think about it like this: "What's the exponent $x$ to the base $b$, such that $b^x = b^x$? It's $x$!".
+The second equation $x = log_b(b^x)$ is even easier to understand. I like to ask myself the question: "What's the exponent $x$ to the base $b$, such that $b^x = b^x$? It's $x$!".
 
 Based on this we are also able to induce the values of a few logarithmic expressions. For example what is the value of $log_a(a)$?
 based on the laws of exponents, we can rewrite this as $log_a(a^1)$ or as $log_a(a^x)$ where $x = 1$. Now, it's obvious from the second identity that the answer is 1. The same approach works for $log_a(1)$. Rewriting this the same way by substituting $a^0$ for $1$ gives us $log_a(a^0) = 0$.
 
-## Multiplication is addition
+## Multiplication as addition
 
 The following is another central identity which opens up a lot of possibilities for us when it comes to computing logarithms manually.
 
-$$log_b(x \cdot y) = log_b(x) + log_b(y) ~~~~ \text{if}  ~ x > 0 \text{, } y > 0$$
+$$log_b(x \cdot y) = log_b(x) + log_b(y) ~~~~ \text{if}  ~ x > 0 \text{,} ~ y > 0$$
 
-It's proof can be constructed from the two identities above and the rules of exponents. We start by using the identity $x = b^{log_b(b)}$ from above to substitute $x$ and $y$ in the left side of the equation:
+It's proof can be constructed from the two identities above and the rules of exponents. We start by using the first identity $x = b^{log_b(b)}$ from above to substitute $x$ and $y$ in the left side of the equation:
 
-$$log_b(x \cdot y) = log_b(b^{log_b(x)} \cdot b^{log_b(y)})$$
+$$log_b(x \cdot y) = log_b(b^{log_b(x)} \cdot b^{log_b(y)})\text{.}$$
 
-. Using the rule of exponents which states that $x^a \cdot x^b = x^{a + b}$, we can simplify this into
+Using the rule of exponents which states that $x^a \cdot x^b = x^{a + b}$, we can simplify this into
 
-$$log_b(b^{log_b(x)} \cdot b^{log_b(y)}) = log_b(b^{log_b(x) + log_b(y)})$$
+$$log_b(b^{log_b(x)} \cdot b^{log_b(y)}) = log_b(b^{log_b(x) + log_b(y)}) \text{.}$$
 
-. Lastly the second identity $x = log_b({b^x})$ is applied.
+Lastly the second identity $x = log_b({b^x})$ is applied.
 
 $$log_b(b^{log_b(x) + log_b(y)}) = log_b(x) + log_b(y)$$
 
 This equation was introduced in 1614 by John Napier and is famous because it allowed [reducing complex multiplications to simple additions](https://en.wikipedia.org/wiki/Mathematical_table#Tables_of_logarithms). Instead of performing the multiplication itself, people could simply look-up the values of $log_b(x)$ and $log_b(y)$ and then add them together. This is one of the techniques we'll be using later to solve logarithmic equations manually. Instead of looking up the values in a logarithm table, we'll memorize a few key ones.
 
+## Division as subtraction
 
+The laws of exponents also state that $x^a / x^b = x^{a - b}$. Hence, the equation above works for division, too:
 
+$$log_b(x / y) = log_b(x) - log_b(y) ~~~~ \text{if} ~ x > 0 \text{,} ~ y > 0 \text{.}$$
 
-[Connection to roots: $x^{1/n}$.]
+## Exponentiation as multiplication
+
+Based on the law of exponents which states that $(x^a)^b = x^{a \cdot b}$, we get this mind-boggling equation:
+
+$$log_b(x^c) = c \cdot log_b(x) ~~~~ \text{if} ~ x > 0 \text{.}$$
+
+This can be proven by initially defining an auxiliary variable $y = log_b(x)$, so that $b^y = x$. By substituting $b^y$ for $x$, we get $$log_b((b^y)^c)$$. Next, we apply the law of exponents:
+
+$$log_b((b^y)^c) = log_b(b^{y \cdot c})\text{.}$$
+
+Lastly, we again apply the second identity from the definition and the substitute the original definition of $y$:
+
+$$log_b(b^{y \cdot c}) = y \cdot c = c \cdot log_b(x)\text{.}$$
+nnn
+## Change of basis
+
+This is the last concept we need to get started calculating logarithms by hand. The ability to change a logarithmic expression's base I very valuable to us, because it means that we only need to memorize a set small of values with a single base. We're then able to convert between bases and
+thereby solve expressions in a plethora of bases.
+
+$$log_b(x) = \frac{log_a(x)}{log_a(b)} ~~~~ \text{if} ~ x > 0\text{,} ~ a > 0$$
+
+Again, we'll start the proof by defining our variable $y = log_b(x)$ based on the first identity. It's important to recall that this is purely used to simplify subsequent equations and make them easy to grasp. With $y$ defined like this, we can perform the following transformations:
+
+$$
+\begin{align*}
+  b^{log_b(x)} &= x & & | ~ y = log_b(x)\\
+  b^y          &= x           &  & | ~ log_a\\
+  log_a(b^y)   &= log_a(x)
+\end{align*}
+$$
+
+We can further transform the left side of this equation using the *'exponentiation as multiplication'* identity.
+
+$$
+\begin{align*}
+  log_a(b^y) = y \cdot log_a(b)   &= log_a(x)    &  & | ~ \div log_a(b)\\
+  y &= \frac{log_a(x)}{log_a(b)}\\
+  log_b(x) &= \frac{log_a(x)}{log_a(b)}
+\end{align*}
+$$
+
+# Memorize a logarithm table
+
+As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they allowed to make complicated calculates relatively simple. In a time without machine computers  this was very valuable. The values of many different logarithmic expressions were calculated only once and then collected into so-called logarithm tables. After transforming the given calculation, you could look up the closest value in the table and you'd have a pretty good estimate.
+
+<a title="agr, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Abramowitz%26Stegun.page97.agr.jpg"><img width="1024" alt="Abramowitz&amp;Stegun.page97.agr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Abramowitz%26Stegun.page97.agr.jpg/1024px-Abramowitz%26Stegun.page97.agr.jpg"></a>
+
+It's not actually that long ago that so called mathematical tables like this existed. Computing logarithms is not difficult for a calculator but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007.
+
+![Table of binomial coefficients of different values in a modern textbook]({{ 'public/figures/binomial_coefficients_table.png' | absolute_url }})
+
+We are going to reduce the set of values to memorize to the bare minimum.
+
+[Memorize table with $log_{10}(e)$ and $log_{10}(2)$]
 
 ---
 
 # Maybe
 
 - Example solving a min. $n$ for min. $P(X \geq k)$ given a $p$ task manually. Could be part of a number of case studies.
+
+- Connection to roots: $x^{1/n}$.
 
 ---
 
@@ -99,6 +158,9 @@ This equation was introduced in 1614 by John Napier and is famous because it all
 
 [^3]: https://www.sciencedirect.com/topics/mathematics/inverse-operation is a starting point. Just like Knuth, it has a lot of interesting stuff to say about logarithms.
 
-[^5]: Scholl, W., & Drews, R. (1997). *Handbuch Mathematik*. Falken.
+[^5]: Scholl, W., & Drews, R. (1997). <cite>Handbuch Mathematik</cite>. Falken.
 
-[^6]: Knuth, E. (1997). *The art of computer programming: Fundamental algorithms* (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
+[^6]: Knuth, E. (1997). <cite>The art of computer programming: Fundamental algorithms</cite> (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
+
+<!--  LocalWords:  frac
+ -->
