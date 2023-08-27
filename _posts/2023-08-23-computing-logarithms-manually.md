@@ -100,7 +100,7 @@ $$log_b((b^y)^c) = log_b(b^{y \cdot c})\text{.}$$
 Lastly, we again apply the second identity from the definition and the substitute the original definition of $y$:
 
 $$log_b(b^{y \cdot c}) = y \cdot c = c \cdot log_b(x)\text{.}$$
-nnn
+
 ## Change of basis
 
 This is the last concept we need to get started calculating logarithms by hand. The ability to change a logarithmic expression's base I very valuable to us, because it means that we only need to memorize a set small of values with a single base. We're then able to convert between bases and
@@ -130,17 +130,188 @@ $$
 
 # Memorize a logarithm table
 
-As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they allowed to make complicated calculates relatively simple. In a time without machine computers  this was very valuable. The values of many different logarithmic expressions were calculated only once and then collected into so-called logarithm tables. After transforming the given calculation, you could look up the closest value in the table and you'd have a pretty good estimate.
+As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated only once and then collected into so-called logarithm tables. After transforming the a calculation, you could look up the closest value in the table and you'd have a pretty good estimate.
 
 <a title="agr, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Abramowitz%26Stegun.page97.agr.jpg"><img width="1024" alt="Abramowitz&amp;Stegun.page97.agr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Abramowitz%26Stegun.page97.agr.jpg/1024px-Abramowitz%26Stegun.page97.agr.jpg"></a>
 
-It's not actually that long ago that so called mathematical tables like this existed. Computing logarithms is not difficult for a calculator but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007.
+It's not actually that long ago that so called mathematical tables like this existed. Computing logarithms is not difficult for a calculator but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007[^7].
 
 ![Table of binomial coefficients of different values in a modern textbook]({{ 'public/figures/binomial_coefficients_table.png' | absolute_url }})
 
-We are going to reduce the set of values to memorize to the bare minimum.
+Obviously, it would be a bit extreme to memorize so many numbers. It's not impossible and it will certainly improve the accuracy of your approximations, but it's not worth the time for most people. Therefore, we are going to reduce the set of values to memorize to the bare minimum.
 
-[Memorize table with $log_{10}(e)$ and $log_{10}(2)$]
+We can change the base of any logarithm into a base we know if we know the value of the logarithm of the original base to the desired base. This means that we only have to memorize a range of logarithms to a single base, as well as some logarithms of other bases to that same base we've chosen. Here, I opted for base $10$ logarithms and conversions from the natural and binary logarithms since there are the most common. The range that we need to memorize is also quite restricted, because multiplications can be broken up into additions. That is, it's sufficient to know the values of $log_{10}(8)$ and $log_{10}(10)$ to compute $log_{10}(80)$ because
+
+$$log_{10}(80) = log_{10}(10 \cdot 8) = log_{10}(10) + log_{10}(8) \text{.}$$
+
+Depending on how hard you want to make it for yourself, you can also opt for different degrees of precision. As suggested by [kqr](https://two-wrongs.com/learning-some-logarithms.html), it's possible to get quite satisfactory results from only a single digit of precision. For completeness, I also added a higher-precision option for each value. It makes sense to memorize the higher-precision values for the logarithms that you'll just most often. This is why the base precision for $log_{10}(e)$ is slightly higher by default.
+
+
+<!-- Markdown table source (good for making edits):
+| logarithm      | base precision | base error | extra precision | extra precision error |
+| $log_{10}(1)$  | 0              | /          | /               | /                     |
+| $log_{10}(10)$ | 1              | /          | /               | /                     |
+| $log_{10}(e)$  | 0.43           | 1.00 %     | 0.4343          | 0.00 %                |
+| $log_{10}(2)$  | 0.30           | 0.34 %     | 0.3010          | 0.01 %                |
+| $log_{10}(3)$  | 0.5            | 4.80 %     | 0.477           | 0.03 %                |
+| $log_{10}(4)$  | 0.6            | 0.34 %     | 0.602           | 0.01 %                |
+| $log_{10}(5)$  | 0.7            | 0.15 %     | 0.699           | 0.00 %                |
+| $log_{10}(6)$  | 0.8            | 2.81 %     | 0.778           | 0.02 %                |
+| $log_{10}(7)$  | 0.8            | 5.34 %     | 0.845           | 0.01 %                |
+| $log_{10}(8)$  | 0.9            | 0.34 %     | 0.903           | 0.01 %                |
+| $log_{10}(9)$  | 1.0            | 4.80 %     | 0.954           | 0.03 %                |
+-->
+
+<table>
+  <tbody>
+    <tr>
+      <td>logarithm</td>
+      <td>base precision</td>
+      <td>base error</td>
+      <td>extra precision</td>
+      <td>extra precision error</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(1)$</td>
+      <td class="good">0</td>
+      <td>/</td>
+      <td>/</td>
+      <td>/</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(10)$</td>
+      <td class="good">1</td>
+      <td>/</td>
+      <td>/</td>
+      <td>/</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(e)$</td>
+      <td>0.43</td>
+      <td>1.00 %</td>
+      <td class="good">0.4343</td>
+      <td>0.00 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(2)$</td>
+      <td>0.30</td>
+      <td class="good">0.34 %</td>
+      <td>0.3010</td>
+      <td>0.01 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(3)$</td>
+      <td>0.5</td>
+      <td>4.80 %</td>
+      <td class="good">0.477</td>
+      <td>0.03 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(4)$</td>
+      <td class="good">0.6</td>
+      <td>0.34 %</td>
+      <td>0.602</td>
+      <td>0.01 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(5)$</td>
+      <td class="good">0.7</td>
+      <td>0.15 %</td>
+      <td>0.699</td>
+      <td>0.00 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(6)$</td>
+      <td>0.8</td>
+      <td>2.81 %</td>
+      <td class="good">0.778</td>
+      <td>0.02 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(7)$</td>
+      <td>0.8</td>
+      <td>5.34 %</td>
+      <td class="good">0.845</td>
+      <td>0.01 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(8)$</td>
+      <td class="good">0.9</td>
+      <td>0.34 %</td>
+      <td>0.903</td>
+      <td>0.01 %</td>
+    </tr>
+    <tr>
+      <td>$log_{10}(9)$</td>
+      <td>1.0</td>
+      <td>4.80 %</td>
+      <td class="good">0.954</td>
+      <td>0.03 %</td>
+    </tr>
+  </tbody>
+</table>
+
+As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^8]. Also, as you can see above, some values are a bit imprecise.
+
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2">$x$</td>
+	  <td colspan="2">$e$</td>
+      <td colspan="2">1</td>
+      <td colspan="2">2</td>
+      <td colspan="2">3</td>
+      <td colspan="2">4</td>
+      <td colspan="2">5</td>
+      <td colspan="2">6</td>
+      <td colspan="2">7</td>
+      <td colspan="2">8</td>
+      <td colspan="2">9</td>
+      <td colspan="2">10</td>
+    </tr>
+    <tr>
+      <td colspan="2">$log_{10}(x)$</td>
+      <td colspan="2">0.4343</td>
+      <td colspan="2">0.0</td>
+      <td colspan="2">0.3</td>
+      <td colspan="2">0.5</td>
+      <td colspan="2">0.6</td>
+      <td colspan="2">0.7</td>
+      <td colspan="2">0.8</td>
+      <td colspan="2">0.85</td>
+      <td colspan="2">0.9</td>
+      <td colspan="2">0.95</td>
+      <td colspan="2">1.0</td>
+    </tr>
+	<tr class="gradient-row">
+	  <td colspan="2" class="none"></td>
+      <td colspan="3" class="none-into-first"></td>
+	  <td colspan="2" class="first-into-second">$\underset{+0.3}{⤻}$</td>
+      <td colspan="2" class="second-into-third">$\underset{+0.2}{⤻}$</td>
+      <td colspan="2" class="third">$\underset{+0.1}{⤻}$</td>
+      <td colspan="2" class="third">$\underset{+0.1}{⤻}$</td>
+      <td colspan="2" class="third-into-fourth">$\underset{+0.1}{⤻}$</td>
+      <td colspan="2" class="fourth">$\underset{+0.05}{⤻}$</td>
+      <td colspan="2" class="fourth">$\underset{+0.05}{⤻}$</td>
+      <td colspan="2" class="fourth">$\underset{+0.05}{⤻}$</td>
+      <td colspan="2" class="fourth">$\underset{+0.05}{⤻}$</td>
+    </tr>
+  </tbody>
+</table>
+
+[TODO: Flashcards]
+
+# The hard part
+
+Now we've got most things covered. The last piece that's missing is getting all of this into your brain forever. The best way to start is to look up a bunch of exercises and simply work through them. For example, I found [this one](https://math.colorado.edu/math1300/resources/Exercises_LogarithmicFunction.pdf) early on.
+
+I said at the beginning of this post that you'd learn how to quickly compute $log_{10}(64)$ by hand. Now that we've got a good idea of what we're dealing with, this shouldn't be too difficult.
+
+Let's think: we need to break up $64$ into an expression made up of logarithms we know. This is not hard, for example  $64 = 8 \cdot 8$. The rest is easy:
+
+$$log_{10}(64) = log_{10}(8 \cdot 8) = log_{10}(8) + log_{10}(8) \approx 0.9 + 0.9 = 1.8\text{.}$$
+
+Just writing this, I am filled with a rush of excitement and awe. Now let's check, how close did we get this time? $log_10(64) = 1.8062$ which means we were off by only $0.0062$! We won't get this close for all numbers and some expressions might be more difficult than this too, but it's really staggering how easy this is.
 
 ---
 
@@ -162,5 +333,9 @@ We are going to reduce the set of values to memorize to the bare minimum.
 
 [^6]: Knuth, E. (1997). <cite>The art of computer programming: Fundamental algorithms</cite> (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
 
-<!--  LocalWords:  frac
+[^7]: Biglke, A., Köhler, N., Kuschnerow, H., & Ledworuski, G. (2007). <cite>Mathematik: Analythische Geometrie Stochastik</cite> (2nd ed., Vol. 2). Cornelsen.
+
+[^8]: Abelson, H., Sussman, G. J., & Sussman, J. (1996). <cite>Structure and Interpretation of Computer Programs</cite> (2nd ed.). Mit Press. 1.2.3 Orders of Growth
+
+<!--  LocalWords:  frac Cornelsen Mit nd Sussman
  -->
