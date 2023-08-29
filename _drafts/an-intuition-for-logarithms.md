@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learning some more logarithms
+title: An Intuition for Logarithms
 ---
 
 <div class="message">
