@@ -15,7 +15,7 @@ To me, the ability of computing logarithms purely by hand on paper is greatly de
 
 On another note, I think there is a lot to say in favor of the aesthetic beauty of performing computationally complex operations without any tools except for systematic analytic thought.
 
-Firstly, why is it that we don't all find logarithms to be intuitive? To answer this question, it was helpful to me to think of mathematical operations in terms of the *function* they compute and that function's *inverse* [^3]. For example, the addition $y = x + a$ yields the value $y$ from $x$ and $a$ and the inverse of the addition results in one of the arguments: $y - a = x$. You can find a table of different examples of this for numerous functions and the restrictions that apply [here on Wikipedia](https://en.wikipedia.org/wiki/Inverse_function#Standard_inverse_functions). You will notice, that at any level of complexity the inverse function is generally more difficult to compute in your head or by hand than the original. The inverse as a stand-alone function is usually a more abstract operation than it's counterpart that's even harder to grasp as the complexity of the base operation increases. For example, a subtraction is often harder to compute manually than an addition and a multiplication is usually harder than both addition and subtraction [^1].
+Firstly, why is it that we don't all find logarithms to be intuitive? To answer this question, it was helpful to me to think of mathematical operations in terms of the *function* they compute and that function's *inverse*. For example, the addition $y = x + a$ yields the value $y$ from $x$ and $a$ and the inverse of the addition results in one of the arguments: $y - a = x$. You can find a table of different examples of this for numerous functions and the restrictions that apply [here on Wikipedia](https://en.wikipedia.org/wiki/Inverse_function#Standard_inverse_functions). You will notice, that at any level of complexity the inverse function is generally more difficult to compute in your head or by hand than the original. The inverse as a stand-alone function is usually a more abstract operation than it's counterpart that's even harder to grasp as the complexity of the base operation increases. For example, a subtraction is often harder to compute manually than an addition and a multiplication is usually harder than both addition and subtraction [^1].
 
 For a long time, the limit of what I could realistically compute or better approximate in my head was square roots. This was likely due to the fact that in German high-school they make us memorize the square and thereby also the square root of all numbers between 0 and 20. Later, this became the starting point for teaching us about parabolas and later polynomials.
 
@@ -34,25 +34,23 @@ I hope that you see why this is so exciting! By pure memorization of a few examp
 
 # Powers, roots and logarithms
 
-There is [some confusion](https://math.stackexchange.com/questions/3693149/isnt-square-root-a-bit-like-log) as to what the relationship between powers, roots and logarithms is. Some common operations such as addition and multiplication are commutative, unlike exponentiation, which is not. Commutativity means that $a + b = b + a$ and $a \cdot b = b \cdot a$: we can exchange the sequence of the operands freely. That is not the case for powers. Generally, $a^b$ isn't the same as $b^a$ [^9]. We can show that exponentiation cannot be commutative by choosing an example that doesn't fulfill this property: $3^4 = 81 \neq 4^3 = 64$.
+There is [some confusion](https://math.stackexchange.com/questions/3693149/isnt-square-root-a-bit-like-log) about the relationship between powers, roots, and logarithms. Some common operations such as addition and multiplication are commutative, unlike exponentiation, which is not. Commutativity means that $a + b = b + a$ and $a \cdot b = b \cdot a$: we can exchange the sequence of the operands freely. That is not the case for powers. Generally, $a^b$ isn't the same as $b^a$ [^9]. We can show that exponentiation cannot be commutative by choosing an example that doesn't fulfill this property: $3^4 = 81 \neq 4^3 = 64$.
 
-[TODO: Improve the following three paragraphs.]
+The fact that [exponentiation is not commutative](https://en.wikipedia.org/wiki/Commutative_property#Division,_subtraction,_and_exponentiation) makes it possible to define two methods of undoing exponentiation: the nth-root and the logarithm. This may seem surprising, since we're so used to commutative operations like addition and multiplication that have only a single inverse operation.
 
-The fact that [exponentiation is not commutative](https://en.wikipedia.org/wiki/Commutative_property#Division,_subtraction,_and_exponentiation) makes it possible to define: the nth-root and the logarithm. This may seem surprising since we're so used to commutative operations like addition and multiplication that have only a single inverse operation.
+Say we are given an exponentiation $x = b^n$ where $b$ and $x$ are positive real numbers, $b \neq 1$, and $n$ is a positive integer. If we know the values of $n$ and $x$, the nth-root gives the value of $b = \sqrt[n]{x}$. Else if we know the values of $b$ and $x$, the logarithm of $x$ to the base $b$ yields the values of the exponent $n = log_b(x)$.
 
-If way say that $x = b^n$, then the nth-root is defined as $b = \sqrt[n]{x}$. A sentence that describes what's happening here declaratively might go as follows: "the nth-root of a number x is the base b, such that b to the power of n is equal to x". This can also be phrased as a question were the result value of the nth-root is seen as the answer to that question: "what's be base b such that b to the power of n is equal to x?".
+Both the nth-root and the logarithm take the result of an exponentiation as input. Put simply, what makes them different is which missing piece they fill in. Logarithms can be used to compute the exponent from the result value and the base. On the other hand, the nth-root takes the result value and the original exponent, to compute the base.
 
-Given the two variables of the exponentiation $x$ and $n$, the roots yields the third one $b$. Accordingly, the logarithm, which is just the other inverse function for powers, yields the other parameter $n$ from $x$ and $b$: $log_b(x) = n$. The fitting questing would be: "what's the exponent n of b such that b to the power of n is equal to x?". As you can see, the question describing the operation has exactly the same structure with a different sequence. The part that's hard to think here is the "such that" part of the question. We basically have to think in reverse to answer the it. That's the difficulty of inverse functions.
-
-I'd also like to share a figure that helped me improve my understanding of the relationship between the three functions.
+The following figure helped me personally improve my understanding of the relationship between the three functions.
 
 ![Relationship between powers, roots and logarithms]({{ '/public/figures/relationship-power-root-logarithm.png' | absolute_path}})
 
-It stems from a German mathematics textbook from 1997 called Handbuch Mathematik [^5] which translates to <i>Handbook Mathematics</i>. The caption reads: "<i>Relationship between power, root and logarithm or between value of power, base and exponent</i>". This figure illustrates the *triangular relationship* between the three functions, which is key. The same idea is used in [this answer on Stack Exchange](https://math.stackexchange.com/a/165225) to suggest an alternative notation for powers, roots, and logarithms that emphasizes this relationship.
+It stems from a German mathematics textbook called Handbuch Mathematik[^5] which translates to <i>Handbook Mathematics</i>. The caption reads: "<i>Relationship between power, root and logarithm or between value of power, base and exponent</i>". This figure illustrates the *triangular relationship* between the three functions, which is key. The same idea is used in [this answer on Stack Exchange](https://math.stackexchange.com/a/165225) to suggest an alternative notation for powers, roots, and logarithms that emphasizes this relationship.
 
 # Definition of logarithms
 
-Say we have an exponentiation $x = b^y$ where $y$, $b$ and $x$ are real numbers with the additional constraint that $b$ must be positive and $b \neq 1$. Then, the logarithm of $x$ to the base $b$ [is defined as](https://www.alamo.edu/contentassets/3c031ab72f3d4dbda979bc9e66d11634/exponential/math1414-logarithmetic-functions.pdf "Definition of the logarithmic function as given by Crystal Hull")
+Say we have an exponentiation $x = b^y$ where $y$, $b$ and $x$ are real numbers. From now on $b$ and $x$ are positive (excluding 0) and $b \neq 1$. For such an exponentiation, the logarithm of $x$ to the base $b$ [is defined as](https://www.alamo.edu/contentassets/3c031ab72f3d4dbda979bc9e66d11634/exponential/math1414-logarithmetic-functions.pdf "Definition of the logarithmic function as given by Crystal Hull")
 
 $$log_b(x) = y ~~ \Leftrightarrow ~~ b^y = x\text{.}$$
 
@@ -66,43 +64,41 @@ Let's start by digesting $x = b^{log_b(x)}$. To break up the equation, we'll nam
 
 The second equation $x = log_b(b^x)$ is easier to understand. I like to ask myself the question: "What's the exponent $x$ to the base $b$, such that $b^x = b^x$? It's $x$!".
 
-Based on this knowledge, we are also able to induce the values of a few logarithmic expressions. For example, what is the value of $log_a(a)$? Since $a = a^1$, we can rewrite this as $log_a(a^1)$ or equally $log_a(a^x)$ with $x = 1$. Now, it's obvious from the second identity that the answer is 1. The same approach of relying on the laws of exponents works for $log_a(1)$. Rewriting this the same way by substituting $a^0$ for $1$ gives us $log_a(a^0) = 0$.
-
-[TODO: Continue improving language here.]
+Based on this knowledge alone, we are also able to induce the values of a few logarithmic expressions. For example, what is the value of $log_a(a)$? Since $a = a^1$, we can rewrite this as $log_a(a^1)$ or equally $log_a(a^x)$ with $x = 1$. Now, it's obvious from the second identity that the answer is 1. The same approach of relying on the laws of exponents works for $log_a(1)$. Rewriting this the same way by substituting $a^0$ for $1$ gives us $log_a(a^0) = 0$.
 
 ## Multiplication as addition
 
 The following is another central identity which opens up a lot of possibilities for us when it comes to computing logarithms manually.
 
-$$log_b(x \cdot y) = log_b(x) + log_b(y) ~~~~ \text{if}  ~ x > 0 \text{,} ~ y > 0$$
+$$log_b(x \cdot y) = log_b(x) + log_b(y) ~~~~ \text{if}  ~ y > 0$$
 
-It's proof can be constructed from the two identities above and the rules of exponents. We start by using the first identity $x = b^{log_b(b)}$ from above to substitute $x$ and $y$ in the left side of the equation:
+It's proof can be constructed from the two identities above and the rules of exponents. We start by using the first identity $x = b^{log_b(b)}$ to substitute $x$ and $y$ in the left side of the equation:
 
 $$log_b(x \cdot y) = log_b(b^{log_b(x)} \cdot b^{log_b(y)})\text{.}$$
 
-Using the rule of exponents which states that $x^a \cdot x^b = x^{a + b}$, we can simplify this into
+Using the law of exponents which states that $x^a \cdot x^b = x^{a + b}$, we can simplify this into
 
 $$log_b(b^{log_b(x)} \cdot b^{log_b(y)}) = log_b(b^{log_b(x) + log_b(y)}) \text{.}$$
 
-Lastly the second identity $x = log_b({b^x})$ is applied.
+Lastly, the second identity $x = log_b({b^x})$ is used to simplify this even further:
 
-$$log_b(b^{log_b(x) + log_b(y)}) = log_b(x) + log_b(y)$$
+$$log_b(b^{log_b(x) + log_b(y)}) = log_b(x) + log_b(y) \text{.}$$
 
-This equation was introduced in 1614 by John Napier and is famous because it allowed [reducing complex multiplications to simple additions](https://en.wikipedia.org/wiki/Mathematical_table#Tables_of_logarithms). Instead of performing the multiplication itself, people could simply look-up the values of $log_b(x)$ and $log_b(y)$ and then add them together. This is one of the techniques we'll be using later to solve logarithmic equations manually. Instead of looking up the values in a logarithm table, we'll memorize a few key ones.
+John Napier is said to have introduced this equation in 1614, and it quickly became famous because it allowed [reducing complex multiplications to simple additions](https://en.wikipedia.org/wiki/Mathematical_table#Tables_of_logarithms). Instead of performing the multiplication itself, people could simply look up the values of $log_b(x)$ and $log_b(y)$ and then add them together. This is one of the techniques we'll be using later to solve logarithmic equations manually. Instead of looking up the values in a logarithm table, we'll memorize a few key ones.
 
 ## Division as subtraction
 
 The laws of exponents also state that $x^a / x^b = x^{a - b}$. Hence, the equation above works for division, too:
 
-$$log_b(x / y) = log_b(x) - log_b(y) ~~~~ \text{if} ~ x > 0 \text{,} ~ y > 0 \text{.}$$
+$$log_b(x / y) = log_b(x) - log_b(y) ~~~~ \text{if} ~ y > 0 \text{.}$$
 
 ## Exponentiation as multiplication
 
-Based on the law of exponents which states that $(x^a)^b = x^{a \cdot b}$, we get this mind-boggling equation:
+There is another law of exponents which states that $(x^a)^b = x^{a \cdot b}$. Based on this, we get the following mind-boggling equation:
 
-$$log_b(x^c) = c \cdot log_b(x) ~~~~ \text{if} ~ x > 0 \text{.}$$
+$$log_b(x^c) = c \cdot log_b(x)$$
 
-This can be proven by initially defining an auxiliary variable $y = log_b(x)$, so that $b^y = x$. By substituting $b^y$ for $x$, we get $$log_b((b^y)^c)$$. Next, we apply the law of exponents:
+This can be proven by initially defining an auxiliary variable $y = log_b(x)$, so that $b^y = x$ (first identity). By substituting $b^y$ for $x$, we get $$log_b((b^y)^c)$$. Next, we apply this law of exponents:
 
 $$log_b((b^y)^c) = log_b(b^{y \cdot c})\text{.}$$
 
@@ -112,32 +108,47 @@ $$log_b(b^{y \cdot c}) = y \cdot c = c \cdot log_b(x)\text{.}$$
 
 ## Change of basis
 
-This is the last concept we need to get started calculating logarithms by hand. The ability to change a logarithmic expression's base I very valuable to us, because it means that we only need to memorize a set small of values with a single base. We're then able to convert between bases and
-thereby solve expressions in a plethora of bases.
+This is the last concept we need to get started calculating logarithms by hand. The ability to change a logarithmic expression's base is very valuable to us, because it means that we only need to memorize a relatively set small of values for a single base. We're then able to convert between bases and thereby solve expressions in a plethora of bases.
 
-$$log_b(x) = \frac{log_a(x)}{log_a(b)} ~~~~ \text{if} ~ x > 0\text{,} ~ a > 0$$
+$$log_b(x) = \frac{log_a(x)}{log_a(b)} ~~~~ \text{if} ~ a > 0$$
 
-Again, we'll start the proof by defining our variable $y = log_b(x)$ based on the first identity. It's important to recall that this is purely used to simplify subsequent equations and make them easy to grasp. With $y$ defined like this, we can perform the following transformations:
+Again, we'll start by defining a variable $y = log_b(x)$. It's important to recall that this is purely used to simplify subsequent equations and make them easy to grasp. We can transform the left side of the equation into the exponential form.
+
+$$log_b(x) = y \Leftrightarrow b^y = x$$
+
+From here, we continue by taking the logarithm of both sides to the desired base $a$. Just like $b$, $a$ can be any positive real number except $1$.
 
 $$
 \begin{align*}
-  b^{log_b(x)} &= x & & | ~ y = log_b(x)\\
   b^y          &= x           &  & | ~ log_a\\
   log_a(b^y)   &= log_a(x)
 \end{align*}
 $$
 
-We can further transform the left side of this equation using the *'exponentiation as multiplication'* identity.
+We can further transform this equation using the *'exponentiation as multiplication'* identity.
 
 $$
 \begin{align*}
-  log_a(b^y) = y \cdot log_a(b)   &= log_a(x)    &  & | ~ \div log_a(b)\\
-  y &= \frac{log_a(x)}{log_a(b)}\\
+  log_a(b^y) &= log_a(x)\\[2pt]
+  y \cdot log_a(b) &= log_a(x)
+\end{align*}
+$$
+
+The last step is to isolate the variable $y$ and to substitute the original $log_b(x)$ for it.
+
+$$
+\begin{align*}
+  y \cdot log_a(b)   &= log_a(x)    &  & | ~ \div log_a(b)\\[2pt]
+  y &= \frac{log_a(x)}{log_a(b)}\\[2pt]
   log_b(x) &= \frac{log_a(x)}{log_a(b)}
 \end{align*}
 $$
 
+Theory-wise that's all I am going to cover in this post. Obviously, there is a lot more to know about logarithms, which I left out here for the sake of brevity. That said, all of this gives us a good foundation to expand upon in the future. More importantly, it is enough for us to compute the values of many different logarithmic equations.
+
 # Memorize a logarithm table
+
+[TODO: Continue improving language here.]
 
 As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated only once and then collected into so-called logarithm tables. After transforming the a calculation, you could look up the closest value in the table and you'd have a pretty good estimate.
 
@@ -330,15 +341,11 @@ Just writing this, I am filled with a rush of excitement and awe. Now let's chec
 
 - Example solving a min. $n$ for min. $P(X \geq k)$ given a $p$ task manually. Could be part of a number of case studies.
 
-- Connection to roots: $x^{1/n}$.
-
 ---
 
 [^1]: This is about how difficult the calculation feels and how long it takes to carry out, not about how hard it would theoretically be, given you knew all possible algorithms, tricks and exceptions.
 
 [^2]: For example, if you want to remember something long term, [spaced repetition](https://ncase.me/remember/) is a [much better strategy](https://gwern.net/spaced-repetition) than drilling it very intensely for a relatively short amount of time. This seems to be a common problem (or misconception) about project based learning, too. Without repetition, it's easy to forget concepts that were used only once during a single project. It also applies to learning for exams and is likely a key factor in why students don't feel motivated to  learn purely for an exam. I've found that the experience of learning during either a project or for an exam can be made much more rewarding by putting in a small amount of extra work in repeating the content a few times so that you can recall it long-term.
-
-[^3]: https://www.sciencedirect.com/topics/mathematics/inverse-operation is a starting point. Just like Knuth, it has a lot of interesting stuff to say about logarithms.
 
 [^5]: Scholl, W., & Drews, R. (1997). <cite>Handbuch Mathematik</cite>. Falken.
 
