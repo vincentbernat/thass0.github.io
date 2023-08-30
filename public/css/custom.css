@@ -1,3 +1,17 @@
+/* Logo in the masthead. */
+.masthead-title img {
+    vertical-align: middle;
+    display: inline-block;
+    height: 1.4em;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 414px) {
+  .masthead-title {
+      text-align: right;
+  }
+}
+
 /* Line with links to share the post below post date. */
 .post-share {
     display: block;
@@ -6,6 +20,7 @@
     color: #9a9a9a;
 }
 
+/* Any item on the page that's jumped to get's highlighted. */
 .post-share:target {
     background-color: #ffffe1 !important;
 }
@@ -56,7 +71,3 @@
 .fourth {
     background-color: var(--fourth) !important;
 }
-
-/*.cell2 {
-  background: linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), rgba(0, 0, 0, 0.5));
-}*/
