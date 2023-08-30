@@ -144,6 +144,8 @@ $$
 \end{align*}
 $$
 
+It might be a good idea to create flash cards for yourself to memorize the different identities or *rules* we can use to transform logarithmic equations. Don't put too much onto the same card. Instead, try to spread out the different insights over multiple cards.
+
 Theory-wise that's all I am going to cover in this post. Obviously, there is a lot more to know about logarithms, which I left out here for the sake of brevity. That said, all of this gives us a good foundation to expand upon in the future. More importantly, it is enough for us to compute the values of many different logarithmic equations.
 
 # Memorize a logarithm table
@@ -319,7 +321,7 @@ As you can see, there is a value with a sub 1 % error for each logarithmic expre
   </tbody>
 </table>
 
-[TODO: Flashcards]
+Again, I'd recommend you to create some flash cards for yourself to memorize these values. If you don't care about precision that much, you can make it easier for yourself by using the more regular values in the lower table. Otherwise, use the upper table to pick and choose.
 
 # The hard part
 
