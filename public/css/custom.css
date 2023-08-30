@@ -1,16 +1,3 @@
-/* Line with links to share the post below post date. */
-.post-share {
-  display: block;
-  margin-top: -1rem;
-  margin-bottom: 1rem;
-  color: #9a9a9a;
-}
-
-/* Any item on the page that's jumped to get's highlighted. */
-.post-share:target {
-  background-color: #ffffe1;
-}
-
 /* Logo in the masthead. */
 .masthead-title img {
     vertical-align: middle;
@@ -23,4 +10,64 @@
   .masthead-title {
       text-align: right;
   }
+}
+
+/* Line with links to share the post below post date. */
+.post-share {
+    display: block;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    color: #9a9a9a;
+}
+
+/* Any item on the page that's jumped to get's highlighted. */
+.post-share:target {
+    background-color: #ffffe1 !important;
+}
+
+.good {
+    background-color: #dcedc8 !important;
+}
+
+.gradient-row td {
+    border: 0px solid #fff;
+}
+
+.gradient-row td {
+    --first: #FFFDE7;
+    --second: #E8F5E9;
+    --third: #E1F5FE;
+    --fourth: #EDE7F6;
+}
+
+.none {
+    background-color: #fff !important;
+}
+
+.none-into-first {
+    background: linear-gradient(to right, #fff 80%, var(--first));
+}
+
+.first-into-second {
+    background: linear-gradient(to right, var(--first) 80%, var(--second));
+}
+
+.second {
+    background-color: var(--second) !important;
+}
+
+.second-into-third {
+    background: linear-gradient(to right, var(--second) 80%, var(--third));
+}
+
+.third {
+    background-color: var(--third) !important;
+}
+
+.third-into-fourth {
+    background: linear-gradient(to right, var(--third) 80%, var(--fourth));
+}
+
+.fourth {
+    background-color: var(--fourth) !important;
 }
