@@ -114,7 +114,7 @@ $$log_b(x) = \frac{log_a(x)}{log_a(b)} ~~~~ \text{if} ~ a > 0$$
 
 Again, we'll start by defining a variable $y = log_b(x)$. It's important to recall that this is purely used to simplify subsequent equations and make them easy to grasp. We can transform the left side of the equation into the exponential form.
 
-$$log_b(x) = y \Leftrightarrow b^y = x$$
+$$log_b(x) = y ~~ \Leftrightarrow ~~ b^y = x$$
 
 From here, we continue by taking the logarithm of both sides to the desired base $a$. Just like $b$, $a$ can be any positive real number except $1$.
 
@@ -150,19 +150,17 @@ Theory-wise that's all I am going to cover in this post. Obviously, there is a l
 
 # Memorize a logarithm table
 
-[TODO: Continue improving language here.]
-
-As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated only once and then collected into so-called logarithm tables. After transforming the a calculation, you could look up the closest value in the table and you'd have a pretty good estimate.
+As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated once and then collected into so-called logarithm tables. After transforming a given problem, you could look up the closest value in the table, and you'd have a pretty good estimate.
 
 <a title="agr, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Abramowitz%26Stegun.page97.agr.jpg"><img width="1024" alt="Abramowitz&amp;Stegun.page97.agr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Abramowitz%26Stegun.page97.agr.jpg/1024px-Abramowitz%26Stegun.page97.agr.jpg"></a>
 
-It's not actually that long ago that so called mathematical tables like this existed. Computing logarithms is not difficult for a calculator but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007[^7].
+It's not actually that long ago that so-called mathematical tables like this existed. Computing logarithms is not difficult for a calculator, but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007[^7].
 
 ![Table of binomial coefficients of different values in a modern textbook]({{ 'public/figures/binomial_coefficients_table.png' | absolute_url }})
 
-Obviously, it would be a bit extreme to memorize so many numbers. It's not impossible and it will certainly improve the accuracy of your approximations, but it's not worth the time for most people. Therefore, we are going to reduce the set of values to memorize to the bare minimum.
+Obviously, it would be a bit extreme to memorize so many numbers. It's not impossible, and it will certainly improve the accuracy of your approximations, but it's not worth the time for most people. Therefore, we are going to reduce the set of values to memorize to the bare minimum.
 
-We can change the base of any logarithm into a base we know if we know the value of the logarithm of the original base to the desired base. This means that we only have to memorize a range of logarithms to a single base, as well as some logarithms of other bases to that same base we've chosen. Here, I opted for base $10$ logarithms and conversions from the natural and binary logarithms since there are the most common. The range that we need to memorize is also quite restricted, because multiplications can be broken up into additions. That is, it's sufficient to know the values of $log_{10}(8)$ and $log_{10}(10)$ to compute $log_{10}(80)$ because
+We can change the base of any logarithm into a base we know if we know the value of the logarithm of the original base to the desired base. This means that we only have to memorize a range of logarithms to a single base, as well as some logarithms of other bases to that same base we've chosen. Here, I opted for base $10$ logarithms and conversions from the natural and binary logarithms, since there are most common. The range that we need to memorize is also quite restricted, because multiplications can be broken up into additions. That is, it's sufficient to know the values of $log_{10}(8)$ and $log_{10}(10)$ to compute $log_{10}(80)$ because
 
 $$log_{10}(80) = log_{10}(10 \cdot 8) = log_{10}(10) + log_{10}(8) \text{.}$$
 
@@ -273,7 +271,7 @@ Depending on how hard you want to make it for yourself, you can also opt for dif
   </tbody>
 </table>
 
-As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^8]. Also, as you can see above, some values are a bit imprecise.
+As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. The downside of this is that some values have an error greater than 1 %. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^8].
 
 <table>
   <tbody>
