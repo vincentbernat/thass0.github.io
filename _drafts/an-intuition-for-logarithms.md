@@ -109,7 +109,7 @@ $$log_b(b^{y \cdot c}) = y \cdot c = c \cdot log_b(x)\text{.}$$
 
 ## Change of basis
 
-This is the last concept we need to get started calculating logarithms by hand. The ability to change a logarithmic expression's base is very valuable to us, because it means that we only need to memorize a relatively set small of values for a single base. We're then able to convert between bases and thereby solve expressions in a plethora of bases.
+This is the last concept we need to get started calculating logarithms by hand. The ability to change a logarithmic expression's base is very valuable to us, because it means that we only need to memorize a relatively small set of values for a single base. We're then able to convert between bases and thereby solve expressions in a plethora of bases.
 
 $$log_b(x) = \frac{log_a(x)}{log_a(b)} ~~~~ \text{if} ~ a > 0$$
 
@@ -328,7 +328,7 @@ Let's think: we need to break up $64$ into an expression made up of logarithms, 
 
 $$log_{10}(64) = log_{10}(8 \cdot 8) = log_{10}(8) + log_{10}(8) \approx 0.9 + 0.9 = 1.8\text{.}$$
 
-Just writing this, I am filled with a rush of excitement and awe. Let's check how close we got this time. $log_10(64) = 1.8062$ which means we were off by only $0.0062$! We won't get this close for all numbers and some expressions might be more difficult than this too, but to me, it's really staggering how easy this is.
+Just writing this, I am filled with a rush of excitement and awe. Let's check how close we got this time. $log_{10}(64) = 1.8062$ which means we were off by only $0.0062$! We won't get this close for all numbers and some expressions might be more difficult than this too, but to me, it's really staggering how easy this is.
 
 Above, I talked about the historic use of logarithms to speed up multiplications of large factors. Now we can use this technique too. [This answer](https://math.stackexchange.com/a/2296546) on Stack Exchange provides a good example of how one might do so. Using logarithms in this way as become somewhat obsolete now that we have so many computers, but if you are interested in how to do this, you should definitely give the answer a read.
 
