@@ -153,9 +153,7 @@ Theory-wise that's all I am going to cover in this post. Obviously, there is a l
 
 As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated once and then collected into so-called [logarithm tables](https://en.wikipedia.org/wiki/Mathematical_table#Tables_of_logarithms). After transforming a given problem, you could look up the closest value in the table, and you'd have a pretty good estimate.
 
-It's not actually that long ago that so-called mathematical tables like this existed. Computing logarithms is not difficult for a calculator, but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007[^5].
-
-![Table of binomial coefficients of different values in a modern textbook]({{ 'public/figures/binomial_coefficients_table.png' | absolute_url }})
+![Early table of logarithms by Henry Briggs from 1617]({{ 'public/figures/logarithm-table-henry-briggs.jpg' | absolute_url }} "Composite image of two pages of Henry Briggs' Logarithmorum Chilias Prima. Source of the images: http://www.pmonta.com/tables/logarithmorum-chilias-prima/index.html")
 
 Obviously, it would be a bit extreme to memorize so many numbers. It's not impossible, and it will certainly improve the accuracy of your approximations, but it's not worth the time for most people. Therefore, we are going to reduce the set of values to memorize to the bare minimum.
 
@@ -270,7 +268,7 @@ Depending on how hard you want to make it for yourself, you can also opt for dif
   </tbody>
 </table>
 
-As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. The downside of this is that some values have an error greater than 1 %. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^6].
+As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. The downside of this is that some values have an error greater than 1 %. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^5].
 
 <table>
   <tbody>
@@ -382,9 +380,7 @@ With this post, I hope to share some of the joyful moments of insight I felt whe
 
 [^4]: Knuth, E. (1997). <cite>The art of computer programming: Fundamental algorithms</cite> (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
 
-[^5]: Biglke, A., Köhler, N., Kuschnerow, H., & Ledworuski, G. (2007). <cite>Mathematik: Analythische Geometrie Stochastik</cite> (2nd ed., Vol. 2). Cornelsen.
-
-[^6]: Abelson, H., Sussman, G. J., & Sussman, J. (1996). <cite>Structure and Interpretation of Computer Programs</cite> (2nd ed.). Mit Press. 1.2.3 Orders of Growth
+[^5]: Abelson, H., Sussman, G. J., & Sussman, J. (1996). <cite>Structure and Interpretation of Computer Programs</cite> (2nd ed.). Mit Press. 1.2.3 Orders of Growth
 
 <!--  LocalWords:  frac Cornelsen Mit nd Sussman
  -->
