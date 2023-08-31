@@ -1,6 +1,7 @@
 ---
 layout: post
 title: An Intuition for Logarithms
+share_notice: custom
 ---
 
 <div class="message">
@@ -15,15 +16,15 @@ To me, the ability of computing logarithms purely by hand on paper is greatly de
 
 On another note, I think there is a lot to say in favor of the aesthetic beauty of performing computationally complex operations without any tools except for systematic analytic thought.
 
-Firstly, why is it that we don't all find logarithms to be intuitive? To answer this question, it was helpful to me to think of mathematical operations in terms of the *function* they compute and that function's *inverse*. For example, the addition $y = x + a$ yields the value $y$ from $x$ and $a$ and the inverse of the addition results in one of the arguments: $y - a = x$. You can find a table of different examples of this for numerous functions and the restrictions that apply [here on Wikipedia](https://en.wikipedia.org/wiki/Inverse_function#Standard_inverse_functions). You will notice, that at any level of complexity the inverse function is generally more difficult to compute in your head or by hand than the original. The inverse as a stand-alone function is usually a more abstract operation than it's counterpart that's even harder to grasp as the complexity of the base operation increases. For example, a subtraction is often harder to compute manually than an addition and a multiplication is usually harder than both addition and subtraction [^1].
+Firstly, why is it that we don't all find logarithms to be intuitive? To answer this question, it was helpful to me to think of mathematical operations in terms of the *function* they compute and that function's *inverse*. For example, the addition $y = x + a$ yields the value $y$ from $x$ and $a$ and the inverse of the addition results in one of the arguments: $y - a = x$. You can find a table of different examples of this for numerous functions and the restrictions that apply [here on Wikipedia](https://en.wikipedia.org/wiki/Inverse_function#Standard_inverse_functions). You will notice, that at any level of complexity the inverse function is generally more difficult to compute in your head or by hand than the original. The inverse as a stand-alone function is usually a more abstract operation than it's counterpart that's even harder to grasp as the complexity of the base operation increases. For example, a subtraction is often harder to compute manually than an addition and a multiplication is usually harder than both addition and subtraction.
 
 For a long time, the limit of what I could realistically compute or better approximate in my head was square roots. This was likely due to the fact that in German high-school they make us memorize the square and thereby also the square root of all numbers between 0 and 20. Later, this became the starting point for teaching us about parabolas and later polynomials.
 
 I can't recall whether I felt bored during those introductory classes, but I am certain many people disliked endlessly performing simple calculations applying the same operation over and over again. The method is somewhat boring, but it seems to me that memorizing a number of common function values and then drilling their relationships is useful in building a base from which to construct a deeper understanding and improved intuition. It's also essential to have memorized a few examples if you want to approximate the values of complex functions in a timely manner without using a calculator.
 
-Earlier on, they used the same approach for addition, subtraction, multiplication, and division. The general idea was introduced first, and then it was drilled for a while to get a feel for it. This is definitely not the ultimate learning strategy, and better methods of internalizing concepts are used everywhere outside public schools [^2]. But it highlights the importance of getting to a place where one doesn't need to think about the basic operations anymore. They are just there in your head, right at your disposal.
+Earlier on, they used the same approach for addition, subtraction, multiplication, and division. The general idea was introduced first, and then it was drilled for a while to get a feel for it. This is definitely not the ultimate learning strategy, and better methods of internalizing concepts are used everywhere outside public schools [^1]. But it highlights the importance of getting to a place where one doesn't need to think about the basic operations anymore. They are just there in your head, right at your disposal.
 
-For example, what's the square root of $17$? Not knowing how to algorithmically compute the best approximation of $\sqrt{17}$, we can make a pretty good *intuitive* guess by relying on our knowledge of square roots. We memorized that $\sqrt{16} = 4$, that the square of the next integer after $4$ is $5^2 = 25$ and that the function $f(x) = x^2$ is continuous. Based on this knowledge, we can quickly say that $\sqrt{17}$ must be somewhere in the lower part of the interval $[4, 5]$.
+For example, what's the square root of $17$? Not knowing how to algorithmically compute the best approximation of $\sqrt{17}$, we can make a pretty good *intuitive* guess by relying on our knowledge of square roots. We memorized that $\sqrt{16} = 4$, that the square of the next integer after $4$ is $5^1 = 25$ and that the function $f(x) = x^1$ is continuous. Based on this knowledge, we can quickly say that $\sqrt{17}$ must be somewhere in the lower part of the interval $[4, 5]$.
 
 This gets us pretty far, but let's continue. To improve our guess without spending any time on (generally) random guesses, we can approximate $f(x)$ for $4 \leq x \leq 5$ as a linear function. Based on this, we can conclude that since $25 - 16 = 9$ and $\sqrt{25} - \sqrt{16} = 5 - 4 = 1$, $\sqrt{17} = \sqrt{16 + 1} \approx 4 + \frac{1}{9}$. All of these calculations can be easily performed in one's head or quickly be scribbled down on a piece of paper. The figure below illustrates what I have just explained. Again, note this doesn't involve any calculates that are difficult to perform manually.
 
@@ -34,7 +35,7 @@ I hope that you see why this is so exciting! By pure memorization of a few examp
 
 # Powers, roots and logarithms
 
-There is [some confusion](https://math.stackexchange.com/questions/3693149/isnt-square-root-a-bit-like-log) about the relationship between powers, roots, and logarithms. Some common operations such as addition and multiplication are commutative, unlike exponentiation, which is not. Commutativity means that $a + b = b + a$ and $a \cdot b = b \cdot a$: we can exchange the sequence of the operands freely. That is not the case for powers. Generally, $a^b$ isn't the same as $b^a$ [^9]. We can show that exponentiation cannot be commutative by choosing an example that doesn't fulfill this property: $3^4 = 81 \neq 4^3 = 64$.
+There is [some confusion](https://math.stackexchange.com/questions/3693149/isnt-square-root-a-bit-like-log) about the relationship between powers, roots, and logarithms. Some common operations such as addition and multiplication are commutative, unlike exponentiation, which is not. Commutativity means that $a + b = b + a$ and $a \cdot b = b \cdot a$: we can exchange the sequence of the operands freely. That is not the case for powers. Generally, $a^b$ isn't the same as $b^a$ [^2]. We can show that exponentiation cannot be commutative by choosing an example that doesn't fulfill this property: $3^4 = 81 \neq 4^3 = 64$.
 
 The fact that [exponentiation is not commutative](https://en.wikipedia.org/wiki/Commutative_property#Division,_subtraction,_and_exponentiation) makes it possible to define two methods of undoing exponentiation: the nth-root and the logarithm. This may seem surprising, since we're so used to commutative operations like addition and multiplication that have only a single inverse operation.
 
@@ -46,7 +47,7 @@ The following figure helped me personally improve my understanding of the relati
 
 ![Relationship between powers, roots and logarithms]({{ '/public/figures/relationship-power-root-logarithm.png' | absolute_path}})
 
-It stems from a German mathematics textbook called Handbuch Mathematik[^5] which translates to <i>Handbook Mathematics</i>. The caption reads: "<i>Relationship between power, root and logarithm or between value of power, base and exponent</i>". This figure illustrates the *triangular relationship* between the three functions, which is key. The same idea is used in [this answer on Stack Exchange](https://math.stackexchange.com/a/165225) to suggest an alternative notation for powers, roots, and logarithms that emphasizes this relationship.
+It stems from a German mathematics textbook called Handbuch Mathematik[^3] which translates to <i>Handbook Mathematics</i>. The caption reads: "<i>Relationship between power, root and logarithm or between value of power, base and exponent</i>". This figure illustrates the *triangular relationship* between the three functions, which is key. The same idea is used in [this answer on Stack Exchange](https://math.stackexchange.com/a/165225) to suggest an alternative notation for powers, roots, and logarithms that emphasizes this relationship.
 
 # Definition of logarithms
 
@@ -54,7 +55,7 @@ Say we have an exponentiation $x = b^y$ where $y$, $b$ and $x$ are real numbers.
 
 $$log_b(x) = y ~~ \Leftrightarrow ~~ b^y = x\text{.}$$
 
-In the exponentiation $x = b^y$, if we know $x$ and  $b$, the logarithm of $x$ to the base $b$ gives us the missing exponent. From this definition we get the following identities [^6]:
+In the exponentiation $x = b^y$, if we know $x$ and  $b$, the logarithm of $x$ to the base $b$ gives us the missing exponent. From this definition we get the following identities [^4]:
 
 $$\text{(1)} ~~~ x = b^{log_b(x)} ~~~~~~ \text{(2)} ~~~ x = log_b({b^x})\text{.}$$
 
@@ -150,11 +151,9 @@ Theory-wise that's all I am going to cover in this post. Obviously, there is a l
 
 # Memorize a logarithm table
 
-As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated once and then collected into so-called logarithm tables. After transforming a given problem, you could look up the closest value in the table, and you'd have a pretty good estimate.
+As mentioned above, logarithms were a huge breakthrough when they were first discovered, because they made complicated calculates relatively simple. In a time without machine computers, this was very valuable. The values of many different logarithmic expressions were calculated once and then collected into so-called [logarithm tables](https://en.wikipedia.org/wiki/Mathematical_table#Tables_of_logarithms). After transforming a given problem, you could look up the closest value in the table, and you'd have a pretty good estimate.
 
-<a title="agr, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Abramowitz%26Stegun.page97.agr.jpg"><img width="1024" alt="Abramowitz&amp;Stegun.page97.agr" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Abramowitz%26Stegun.page97.agr.jpg/1024px-Abramowitz%26Stegun.page97.agr.jpg"></a>
-
-It's not actually that long ago that so-called mathematical tables like this existed. Computing logarithms is not difficult for a calculator, but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007[^7].
+It's not actually that long ago that so-called mathematical tables like this existed. Computing logarithms is not difficult for a calculator, but there are common operation that are. For example, this is a table of binomial coefficients $\binom{n}{k}$ from a stochastic textbook from 2007[^5].
 
 ![Table of binomial coefficients of different values in a modern textbook]({{ 'public/figures/binomial_coefficients_table.png' | absolute_url }})
 
@@ -271,7 +270,7 @@ Depending on how hard you want to make it for yourself, you can also opt for dif
   </tbody>
 </table>
 
-As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. The downside of this is that some values have an error greater than 1 %. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^8].
+As you can see, there is a value with a sub 1 % error for each logarithmic expression (the one in green). Personally, I chose to memorize the following sequence of values. I find that they are relatively easy to remember because of their regularities. The downside of this is that some values have an error greater than 1 %. They also highlight a key characteristic of logarithmic grow, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^6].
 
 <table>
   <tbody>
@@ -327,35 +326,65 @@ Now we've got most things covered. The last piece that's missing is getting all 
 
 I said at the beginning of this post that you'd learn how to quickly compute $log_{10}(64)$ by hand. Now that we've got a good idea of what we're dealing with, this shouldn't be too difficult.
 
-Let's think: we need to break up $64$ into an expression made up of logarithms we know. This is not hard, for example  $64 = 8 \cdot 8$. The rest is easy:
+Let's think: we need to break up $64$ into an expression made up of logarithms, we know. This is not hard, for example  $64 = 8 \cdot 8$. The rest is easy:
 
 $$log_{10}(64) = log_{10}(8 \cdot 8) = log_{10}(8) + log_{10}(8) \approx 0.9 + 0.9 = 1.8\text{.}$$
 
-Just writing this, I am filled with a rush of excitement and awe. Now let's check, how close did we get this time? $log_10(64) = 1.8062$ which means we were off by only $0.0062$! We won't get this close for all numbers and some expressions might be more difficult than this too, but it's really staggering how easy this is.
+Just writing this, I am filled with a rush of excitement and awe. Let's check how close we got this time. $log_10(64) = 1.8062$ which means we were off by only $0.0062$! We won't get this close for all numbers and some expressions might be more difficult than this too, but to me, it's really staggering how easy this is.
 
-[TODO: Add more examples and exercises here.]
+Above, I talked about the historic use of logarithms to speed up multiplications of large factors. Now we can use this technique too. [This answer](https://math.stackexchange.com/a/2296546) on Stack Exchange provides a good example of how one might do so. Using logarithms in this way as become somewhat obsolete now that we have so many computers, but if you are interested in how to do this, you should definitely give the answer a read.
+
+Lastly, I want to demonstrate how we can use our newly found knowledge to solve for any exponent. For example, let's look at the following equation: $0.5^x = 0.1$. Here, we have an unknown in the exponent. By definition, this is where we need to use logarithms.
+
+$$
+\begin{align*}
+  0.5^x &= 0.1 & | ~~ log_{0.5}\\[2pt]
+  x &= log_{0.5}(0.1)
+\end{align*}
+$$
+
+This time, we need to change the logarithm's base to 10. After doing so, we are left with values which we have memorized.
+
+$$
+\begin{align*}
+  x &= log_{0.5}(0.1)\\[2pt]
+  x &= \frac{log_{10}(0.1)}{log_{10}(0.5)}\\[2pt]
+  x &= \frac{log_{10}(1 / 10)}{log_{10}(1 / 2)}\\[2pt]
+  x &= \frac{log_{10}(1) - log_{10}(10)}{log_{10}(1) - log_{10}(2)}\\[2pt]
+  x &\approx \frac{0 - 1}{0 - 0.3}\\[2pt]
+  x &\approx \frac{-1}{-0.3}\\[2pt]
+  x &\approx 3.33
+\end{align*}
+$$
+
+# Conclusion
+
+With this post, I hope to share some of the joyful moments of insight I felt when I dug deeper into understanding logarithms. Here, I mainly focused on how to deal with logarithmic equations and how to solve them manually. There is much more to know about logarithms, about their history, their modern use, and especially their connection to the exponential function. Still, I tried to provide extensive explanations and I hope you found them insightful.
+
+[Feel free to reach out]({{ '/about' | absolute_url }}) if you have any questions or suggestions. I'm always curious about your feedback. Also, if you noticed any mistakes, I would be grateful if you could point them out for me to correct.
+
+<br />
+
+---
+<!-- Place the share notice before the footnotes, since most people
+	are not going to scroll past the footnotes -->
+{% include share_notice.html %}
 
 ---
 
-# Maybe
+<br />
 
-- Example solving a min. $n$ for min. $P(X \geq k)$ given a $p$ task manually. Could be part of a number of case studies.
+[^1]: For example, if you want to remember something long term, [spaced repetition](https://ncase.me/remember/) is a [much better strategy](https://gwern.net/spaced-repetition) than drilling it very intensely for a relatively short amount of time. This seems to be a common problem (or misconception) about project based learning, too. Without repetition, it's easy to forget concepts that were used only once during a single project. It also applies to learning for exams and is likely a key factor in why students don't feel motivated to  learn purely for an exam. I've found that the experience of learning during either a project or for an exam can be made much more rewarding by putting in a small amount of extra work in repeating the content a few times so that you can recall it long-term.
 
----
+[^2]: In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^1 = 16$.
 
-[^1]: This is about how difficult the calculation feels and how long it takes to carry out, not about how hard it would theoretically be, given you knew all possible algorithms, tricks and exceptions.
+[^3]: Scholl, W., & Drews, R. (1997). <cite>Handbuch Mathematik</cite>. Falken.
 
-[^2]: For example, if you want to remember something long term, [spaced repetition](https://ncase.me/remember/) is a [much better strategy](https://gwern.net/spaced-repetition) than drilling it very intensely for a relatively short amount of time. This seems to be a common problem (or misconception) about project based learning, too. Without repetition, it's easy to forget concepts that were used only once during a single project. It also applies to learning for exams and is likely a key factor in why students don't feel motivated to  learn purely for an exam. I've found that the experience of learning during either a project or for an exam can be made much more rewarding by putting in a small amount of extra work in repeating the content a few times so that you can recall it long-term.
+[^4]: Knuth, E. (1997). <cite>The art of computer programming: Fundamental algorithms</cite> (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
 
-[^5]: Scholl, W., & Drews, R. (1997). <cite>Handbuch Mathematik</cite>. Falken.
+[^5]: Biglke, A., Köhler, N., Kuschnerow, H., & Ledworuski, G. (2007). <cite>Mathematik: Analythische Geometrie Stochastik</cite> (2nd ed., Vol. 2). Cornelsen.
 
-[^6]: Knuth, E. (1997). <cite>The art of computer programming: Fundamental algorithms</cite> (3rd ed., Vol. 1). Addison Wesley Longman Publishing Co., Inc.
-
-[^7]: Biglke, A., Köhler, N., Kuschnerow, H., & Ledworuski, G. (2007). <cite>Mathematik: Analythische Geometrie Stochastik</cite> (2nd ed., Vol. 2). Cornelsen.
-
-[^8]: Abelson, H., Sussman, G. J., & Sussman, J. (1996). <cite>Structure and Interpretation of Computer Programs</cite> (2nd ed.). Mit Press. 1.2.3 Orders of Growth
-
-[^9]: In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^2 = 16$.
+[^6]: Abelson, H., Sussman, G. J., & Sussman, J. (1996). <cite>Structure and Interpretation of Computer Programs</cite> (2nd ed.). Mit Press. 1.2.3 Orders of Growth
 
 <!--  LocalWords:  frac Cornelsen Mit nd Sussman
  -->
