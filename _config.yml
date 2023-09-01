@@ -34,4 +34,8 @@ social:
 plugins:
   - jekyll-paginate
 
+compress_html:
+  clippings: all
+  comments: all
+
 exclude: ["blog-code", "README.md"]
