@@ -3,6 +3,25 @@
   <a rel="noopener" href="#share-links">share it</a>
   with others who enjoy this kind of content.
   Also, consider subscribing to the
+  <a ref="noopener" href="#bd-email">newsletter</a> or
   <a href="{{ '/atom.xml' | absolute_url }}" target="_blank">RSS feed</a>
   to stay updated with new posts.
+
+  <form
+    action="https://buttondown.email/api/emails/embed-subscribe/thasso"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.email/thasso', 'popupwindow')">
+
+    <div class="input-group mb-3">
+      <input type="email"
+	     name="email"
+	     id="bd-email"
+	     class="form-control"
+	     placeholder="your@email.address"
+	     aria-label="email"
+	     />
+      <input type="submit" value="Subscribe" class="btn subscribe-btn" />
+    </div>
+  </form>
 </p>
