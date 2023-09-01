@@ -16,13 +16,12 @@ layout: default
     <a href="https://news.ycombinator.com/submitlink?u={{ page.url | absolute_url }}&t={{ page.title }}">HN</a>
   </span>
   {{ content }}
-</div>
 
-
-{% unless page.share_notice == "custom" %}
+  {% unless page.share_notice == "custom" %}
   <hr />
   {% include share_notice.html %}
-{% endunless %}
+  {% endunless %}
+</div>
 
 {% if site.related_posts.size >= 1 %}
 <div class="related">

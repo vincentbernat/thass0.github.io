@@ -361,8 +361,6 @@ With this post, I hope to share some of the joyful moments of insight I felt whe
 
 [Feel free to reach out]({{ '/about' | absolute_url }}) if you have any questions or suggestions. I'm always curious about your feedback. Also, if you noticed any mistakes, I would be grateful if you could point them out for me to correct.
 
-<br />
-
 ---
 <!-- Place the share notice before the footnotes, since most people
 	are not going to scroll past the footnotes -->
