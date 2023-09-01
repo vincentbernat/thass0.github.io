@@ -24,19 +24,11 @@
         {% endif %}
       {% endif %}
     {% endfor %}
-  </nav>
 
-  <div class="sidebar-item">
-    <div id="contact-list" style="text-align:center">
-      {% for social in site.social %}
-      <p>
-      <a href="{{social.url}}">
-	{{social.name}}
-      </a>
-      </p>
-      {% endfor %}
-    </div>
-  </div>
+    {% for social in site.social %}
+    <a class="sidebar-nav-item" href="{{social.url}}">{{social.name}}</a>
+    {% endfor %}
+  </nav>
 
   <div class="sidebar-item">
     <p>
