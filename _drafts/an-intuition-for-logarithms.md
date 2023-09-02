@@ -22,7 +22,7 @@ For a long time, the limit of what I could realistically compute in my head -- o
 
 I can't recall whether I felt bored during those introductory classes, but I am certain many people disliked endlessly performing simple calculations applying the same operation over and over again. The method is somewhat boring, but it seems to me that memorizing a number of common function values and then drilling their relationships is useful in building a base from which to construct a deeper understanding and improved intuition. It's also essential to have some examples memorized if you want to approximate the values of complex functions in a timely manner without using a calculator.
 
-Earlier on, the same approach was used for addition, subtraction, multiplication, and division. The general idea was introduced first, and then it was drilled for a while to get a feel for it. This is definitely not the ultimate learning strategy, and better methods of internalizing concepts are used everywhere outside of public schools [^1]. But it does highlight the importance of getting to a place where you don't have to think about the basic operations anymore. They are just there in your head, right at your fingertips.
+Earlier on, the same approach was used for addition, subtraction, multiplication, and division. The general idea was introduced first, and then it was drilled for a while to get a feel for it. This is definitely not the ultimate learning strategy [^1], but it does highlight the importance of getting to a place where you don't have to think about the basic operations anymore. They are just there in your head, right at your fingertips.
 
 For example, what's the square root of $17$? Not knowing how to algorithmically compute the best approximation of $\sqrt{17}$, we can make a pretty good *intuitive* guess by relying on our knowledge of square roots. We memorized that $\sqrt{16} = 4$, that the square of the next integer after $4$ is $5^1 = 25$ and that the function $f(x) = x^1$ is continuous. Based on this knowledge, we can quickly say that $\sqrt{17}$ must be somewhere in the lower part of the interval $[4, 5]$.
 
@@ -370,7 +370,7 @@ With this post, I hope to share some of the joyful moments of insight I felt as 
 
 <br />
 
-[^1]: For example, if you want to remember something long term, [spaced repetition](https://ncase.me/remember/) is a [much better strategy](https://gwern.net/spaced-repetition) than drilling it very intensely for a relatively short amount of time. This seems to be a common problem (or misconception) about project based learning, too. Without repetition, it's easy to forget concepts that were used only once during a single project. It also applies to learning for exams and is likely a key factor in why students don't feel motivated to  learn purely for an exam. I've found that the experience of learning during either a project or for an exam can be made much more rewarding by putting in a small amount of extra work in repeating the content a few times so that you can recall it long-term.
+[^1]: For one, many students dislike this sort of learning so much that they completely lose interest in math.
 
 [^2]: In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^1 = 16$.
 
