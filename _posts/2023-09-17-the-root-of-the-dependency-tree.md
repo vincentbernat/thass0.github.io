@@ -3,9 +3,9 @@ layout: post
 title: The Root of the Dependency Tree
 ---
 
-One part of implementing syntax highlighting of C source code for my debugger [Spray](https://github.com/d4ckard/spray) was recursively parsing all of the type definitions in the current source file and in its dependencies.
+The hobby debugger I am working on, [Spray](https://github.com/d4ckard/spray), features custom syntax highlighting of C source code. To implement this, I had to recursively parse all the type definitions in the current source file and in its dependencies.
 
-[C is not a context-free language](https://eli.thegreenplace.net/2011/05/02/the-context-sensitivity-of-cs-grammar-revisited), which leads to the so called typedef-name problem [^1]. The problem is that `typedef` can be used to make types look like regular identifiers which leads to some situations where context is needed to determine whether the given identifier is a type. Since types and identifiers should be highlighted using different colors, I had to get that context.
+[C is not a context-free language](https://eli.thegreenplace.net/2011/05/02/the-context-sensitivity-of-cs-grammar-revisited), which leads to the so-called typedef-name problem [^1]. The problem is that `typedef` can be used to make types look like regular identifiers. This creates some situations where context is needed to determine whether the given identifier is a type. Since types and identifiers should be highlighted with different colors, I had to get that context.
 
 While slowly iterating on the logic required to solve this problem, I got to a point where I could inspect the entire public dependency tree of all the header files included in a single source file. Header files are all I need to worry about here, since that is where all public type definitions live.
 
