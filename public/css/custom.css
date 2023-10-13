@@ -4,6 +4,7 @@
     display: inline-block;
     height: 1.4em;
     margin-bottom: 0px;
+    border-radius: 0px;
 }
 
 @media (max-width: 414px) {
