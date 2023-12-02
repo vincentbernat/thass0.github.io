@@ -106,3 +106,14 @@
 
     --bs-btn-focus-shadow-rgb: var(--bs-border-color-rgb);
 }
+
+
+/*****************************/
+/* Custom blue-colored theme */
+/*****************************/
+
+.theme-my-blue .container a,
+.theme-my-blue .sidebar-toggle,
+.theme-my-blue .related-posts li a:hover {
+  color: blue;
+}
