@@ -1,0 +1,14 @@
+- title: Home
+  url: /
+- title: About
+  url: /about.html
+- title: Books
+  url: /books.html
+- title: Newsletter
+  url: /newsletter.html
+- title: RSS
+  url: /feed.xml
+- title: Twitter
+  url: https://twitter.com/d4kdd
+- title: GitHub
+  url: https://github.com/d4ckard

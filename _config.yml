@@ -1,0 +1,25 @@
+title: 'thasso.xyz'
+email: 'd4kd@proton.me'
+author: Thassilo Schulze
+description: >-
+  My personal blog about problems I find intriguing. I would love to hear from
+  you! Feel free to reach out through my <a href="https://thasso.xyz/about/">
+  about page</a>.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://thasso.xyz"
+twitter_username: d4kdd
+github_username: d4ckard
+
+plugins:
+  - jekyll-feed
+
+compress_html:
+  clippings: all
+  comments: all
+
+exclude:
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - blog-code

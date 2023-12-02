@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+    <h2 class="masthead"><a href="/">thasso.xyz</a></h2>
+
+    <nav class="nav-crumbs">
+      <ol>
+	{% for dest in site.data.navigation %}
+	<li class="nav-crumb">
+	  <a href="{{ dest.url }}">{{ dest.title }}</a>
+	  {%- unless forloop.last -%}
+	  <span class="nav-divider" />
+	  {%- endunless -%}
+	</li>
+	{% endfor %}
+      </ol>
+    </nav>
+
+    {{ content }}
+  </body>
+</html>

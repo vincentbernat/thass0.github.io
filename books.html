@@ -1,0 +1,15 @@
+---
+layout: page
+title: Books
+---
+
+Most recent first; technical books are not included.
+
+{% for year in site.data.books %}
+<h2>{{ year.year }}</h2>
+<ul>
+  {% for book in year.read reversed %}
+  <li><i>{{ book.title }}</i>, {{ book.author }}</li>
+  {% endfor %}
+</ul>
+{% endfor %}

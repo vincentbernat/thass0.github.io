@@ -3,11 +3,11 @@ layout: post
 title: Parsing Expressions by Recursive Descent in Haskell
 ---
 
-Parsing numerical expressions by recursive descent is a joy in Haskell! It is incredibly concise and elegant, yet very simple.[^1]
+Parsing numerical expressions by recursive descent is a joy in Haskell! It is incredibly concise and elegant, yet very simple.
 
 What we want to parse are binary expressions like `7 + 42 * 9`, `2 * 3 / 4 * 5`, or `8 * (10 - 6)`. As always, when parsing such expressions, we have to be aware of the associativity of the operators involved and of their different levels of precedence. In this case it's simple: `+`, `-`, `*`, and `/` all associate to the left, and `*` and `/` have higher precedence than `+` and `-`.
 
-This means that we want to turn the above expressions into the following ASTs.[^2]
+This means that we want to turn the above expressions into the following ASTs.[^1]
 
 `7 + 42 * 9` ⇒ `7 + (42 * 9)`. `*` has higher precedence than `+`, so although they both associate to the left, `*` binds tighter than `+`.
 
@@ -21,7 +21,7 @@ This means that we want to turn the above expressions into the following ASTs.[^
 
 ![Figure 3: AST of 8 * (10 - 6)]({{ '/public/figures/ast-3.png' | absolute_url }})
 
-The following grammar encodes the precedence and associativity constraints above. It is also not left-recursive, and can be used in a recursive descent parser.[^3]
+The following grammar encodes the precedence and associativity constraints above. It is also not left-recursive, and can be used in a recursive descent parser.[^2]
 
 ![Figure 4: A grammar for parsing expressions]({{ '/public/figures/grammar.png' | absolute_url }})
 
@@ -237,8 +237,6 @@ I hope this post managed to convey my enthusiasm about the elegance of paring by
 
 <br />
 
-[^1]: If you want, it's even easier than what I present in this post. For example, you could use some special functions from the [parser-combinators](https://hackage.haskell.org/package/parser-combinators-1.3.0/docs/Control-Monad-Combinators-Expr.html) library.
+[^1]: I used [Quiver](https://q.uiver.app/) to create the diagrams. It has an option to embed diagrams as Iframes, but I decided not to, because I like how reliable and simple plain images are.
 
-[^2]: I used [Quiver](https://q.uiver.app/) to create the diagrams. It has an option to embed diagrams as Iframes, but I decided not to, because I like how reliable and simple plain images are.
-
-[^3]: The curly braces denote zero or more repititons of what's inside them. A character in quotes refers to that literal character. The `num` production rule/token is not included in the grammar. It refers to a numeric literal.
+[^2]: The curly braces denote zero or more repititons of what's inside them. A character in quotes refers to that literal character. The `num` production rule/token is not included in the grammar. It refers to a numeric literal.

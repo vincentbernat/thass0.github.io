@@ -1,12 +1,9 @@
 ---
 layout: post
 title: An Intuition for Logarithms
-share_notice: custom
 ---
 
-<div class="message">
 This post was originally inspired by <a href="https://two-wrongs.com/learning-some-logarithms.html">learning some logarithms</a> by kqr. Just like his, post it's about the excitement of discovery, and I hope to present some of the knowledge that I have gathered in an approachable way. Some parts are quite math-heavy, but they are not meant to be a formally rigid study of the topics at hand. Rather, their purpose is to be insightful and practical.
-</div>
 
 I have become fascinated by the ability to calculate logarithmic functions in one's head. To me, logarithms have always felt like a black box that couldn't be conquered. They are a fundamental building block of mathematics. Yet every time I saw a logarithmic equation, I was quick to grab my calculator instead of solving the equation by hand. Over the last half year, I have spent some time improving my understanding of logarithms and learning how to compute the results of logarithmic equations by hand. Here is how I did it.
 
@@ -163,6 +160,54 @@ $$\log_{10}(80) = \log_{10}(10 \cdot 8) = \log_{10}(10) + \log_{10}(8) \text{.}$
 
 Depending on how hard you want to make it for yourself, you can also choose different degrees of precision. As suggested by [kqr](https://two-wrongs.com/learning-some-logarithms.html), it's possible to get quite satisfactory results with only a single digit of precision. For completeness, I also added a higher precision option for each value. It makes sense to memorize the higher precision values for the logarithms that you'll use most often. Therefore, the default precision for $\log_{10}(e)$ and $\log_{10}(2)$ is slightly higher.
 
+<style>
+.good {
+    background-color: #dcedc8 !important;
+}
+
+.gradient-row td {
+    border: 0px solid #fff;
+}
+
+.gradient-row td {
+    --first: #FFFDE7;
+    --second: #E8F5E9;
+    --third: #E1F5FE;
+    --fourth: #EDE7F6;
+}
+
+.none {
+    background-color: #fff !important;
+}
+
+.none-into-first {
+    background: linear-gradient(to right, #fff 80%, var(--first));
+}
+
+.first-into-second {
+    background: linear-gradient(to right, var(--first) 80%, var(--second));
+}
+
+.second {
+    background-color: var(--second) !important;
+}
+
+.second-into-third {
+    background: linear-gradient(to right, var(--second) 80%, var(--third));
+}
+
+.third {
+    background-color: var(--third) !important;
+}
+
+.third-into-fourth {
+    background: linear-gradient(to right, var(--third) 80%, var(--fourth));
+}
+
+.fourth {
+    background-color: var(--fourth) !important;
+}
+</style>
 
 <!-- Markdown table source (good for making edits):
 | logarithm      | base precision | base error | extra precision | extra precision error |
@@ -364,11 +409,6 @@ With this post, I hope to share some of the joyful moments of insight I felt as 
 ---
 <!-- Place the share notice before the footnotes, since most people
 	are not going to scroll past the footnotes -->
-{% include share_notice.html %}
-
----
-
-<br />
 
 [^1]: For one, many students dislike this sort of learning so much that they completely lose interest in math.
 
