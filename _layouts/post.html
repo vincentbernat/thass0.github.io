@@ -4,7 +4,10 @@ layout: default
 
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
 
-<span>{{ page.date | date_to_string }} - {{ site.author }}</span>
+<small>
+  <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
+  - {{ site.author }}
+</small>
 
 {{ content }}
 
