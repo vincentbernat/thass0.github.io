@@ -54,6 +54,7 @@ html {
     --table-border-color: #e5e5e5;
     --table-background-color: #f9f9f9;
     --code-background-color: #efefef;
+    --code-border-color: #606060
  
     font-size: 17px;
     background-color: var(--background-color);
@@ -76,10 +77,10 @@ body {
     /* Font */
     font-family: et-book, Georgia, serif;
     /* Center primary content */
-    width: 87.5%;
+    width: 87.5%;		/* In case the window is smaller than max-width. */
     margin-left: auto;
     margin-right: auto;
-    max-width: 1100px;
+    max-width: 1024px;
     text-align: justify;
 }
 
@@ -195,6 +196,10 @@ nav {
 pre {
     background-color: var(--code-background-color);
     overflow: scroll;
+    padding: 0.5em;
+    border-color: var(--code-border-color);
+    border: 0.12em solid;
+    border-radius: 5px;
 }
 
 code {
