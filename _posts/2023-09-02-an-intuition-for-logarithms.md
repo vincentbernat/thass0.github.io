@@ -224,7 +224,7 @@ Depending on how hard you want to make it for yourself, you can also choose diff
 | $\log_{10}(9)$  | 1.0            | 4.80 %     | 0.954           | 0.03 %                |
 -->
 
-<table>
+<table class="pretty-table">
   <tbody>
     <tr>
       <td>logarithm</td>
@@ -315,7 +315,7 @@ Depending on how hard you want to make it for yourself, you can also choose diff
 
 As you can see, for each logarithmic expression there is a value with an error of less than 1 % (the one in green). Personally, I have chosen to memorize the following sequence of values. I find them relatively easy to remember because of their regularities. The downside of this is that some of the values have an error greater than 1 %. They also highlight a key characteristic of logarithmic growth, namely that the input value has to increase by some factor for the output value to increase by a constant amount[^5].
 
-<table>
+<table class="pretty-table">
   <tbody>
     <tr>
       <td colspan="2">$x$</td>

@@ -53,10 +53,10 @@ html {
     --link-interact-color: #000080;
     --table-border-color: #e5e5e5;
     --table-background-color: #f9f9f9;
-    --code-background-color: #efefef;
-    --code-border-color: #606060
+    --code-background-color: #f3f3f3;
+    --code-border-color: #606060;
  
-    font-size: 17px;
+    font-size: 21px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -87,8 +87,32 @@ body {
 h1, h2, h3, h4, h5, h6 {
     text-align: left;
     text-rendering: optimizeLegibility;
-    font-family: Monospace;
     font-weight: normal;
+}
+
+article h1 {
+    border-bottom: 1px solid;
+}
+
+article h2, article h3, article h4, article h5, article h6 {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: currentcolor;
+    text-decoration-thickness: 1px;
+}
+
+h1 .octicon, h2 .octicon, h3 .octicon, h4 .octicon, h5 .octicon, h6 .octicon  {
+  visibility: hidden;
+}
+
+h1:hover .octicon, h2:hover .octicon, h3:hover .octicon, h4:hover .octicon, h5:hover .octicon, h6:hover .octicon {
+  visibility: visible;
+}
+
+.octicon {
+  fill: currentColor;
+  padding: 0;
+  vertical-align: middle;
 }
 
 hr {
@@ -110,19 +134,19 @@ img {
 }
 
 /* Tables from Poole */
-table {
+.pretty-table {
   margin-bottom: 1rem;
   width: 100%;
   border: 1px solid var(--table-border-color);
   border-collapse: collapse;
 }
-td,
-th {
+.pretty-table td,
+.pretty-table th {
   padding: .25rem .5rem;
   border: 1px solid var(--table-border-color);
 }
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
+.pretty-table tbody tr:nth-child(odd) td,
+.pretty-table tbody tr:nth-child(odd) th {
   background-color: var(--table-background-color);
 }
 
@@ -161,6 +185,7 @@ nav {
     text-align: center;
     /* Yellow glow */
     text-shadow: 0 0 10px var(--glow-color);
+    font-family: monospace;
 }
 
 
@@ -169,23 +194,24 @@ nav {
 /**************/
 
 .posts {
-    list-style-type: none;
-    padding-left: 0;
+    text-align: left;
 }
 
-.posts p::after {
-    content: ' ...';
-}
-
-.posts p {
-    padding-left: 32px;
-    /* font-style: italic; */
-}
-
-@media (max-width: 38em) {
-    .posts p {
-	padding-left: 0px;
+@media (max-width: 50em) {
+    .posts {
+	border-collapse: collapse;
+	width: 100%;
     }
+ 
+    .posts tr {
+	border-bottom: 1px solid black;
+    }
+
+    .posts td,
+    .posts th {
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+    }    
 }
 
 
@@ -198,8 +224,9 @@ pre {
     overflow: scroll;
     padding: 0.5em;
     border-color: var(--code-border-color);
-    border: 0.12em solid;
-    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.12em 0em;
+    line-height: 0.85em;
 }
 
 code {
