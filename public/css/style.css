@@ -201,10 +201,13 @@ nav {
     .posts {
 	border-collapse: collapse;
 	width: 100%;
+	border-style: solid;
+	border-width: 1px 0;
+	border-color: var(--text-color);
     }
  
     .posts tr {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid var(--text-color);
     }
 
     .posts td,
