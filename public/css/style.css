@@ -118,7 +118,7 @@ h1:hover .octicon, h2:hover .octicon, h3:hover .octicon, h4:hover .octicon, h5:h
 hr {
     height: 1px;
     border: 0px;
-    border-top: 1px solid (--text-color);
+    border-top: 1px solid var(--text-color);
     margin: 1em 0;
     padding: 0;
 }
@@ -161,19 +161,53 @@ nav {
     font-family: Monospace;
 }
 
-.nav-crumb {
-    display: inline-block;
-}
-
-.nav-crumbs ol {
+nav ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-.nav-divider::after {
+nav li {
     display: inline-block;
+}
+
+nav li:not(:last-child)::after {
     content: '|';
     padding: 0 4px;
+}
+
+nav li:last-child::after {
+    content: none;
+}
+
+@media (max-width: 40em) {
+    nav {
+	border: initial;
+	border-top: 1px solid;
+
+	/* Anchor at bottom of page */
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--background-color);
+
+	overflow-x: scroll;
+	padding: 1.2em 0em 1.2em;
+    }
+
+    nav ul {
+	white-space: nowrap;
+	margin: 0;
+	padding: 0em 1.2em;
+    }
+
+    nav li:not(:last-child)::after  {
+	padding: 0 8px;
+    }
+
+    nav li:last-child {
+	padding-right: 1.2em;
+    }
 }
 
 

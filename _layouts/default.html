@@ -7,22 +7,19 @@ layout: compress
 
   {% include head.html %}
 
-  <body>
-    <h2 class="masthead"><a href="/">{{ site.title }}</a></h2>
+    <body>
+	<h2 class="masthead"><a href="/">{{ site.title }}</a></h2>
 
-    <nav class="nav-crumbs">
-      <ol>
-	{% for dest in site.data.navigation %}
-	<li class="nav-crumb">
-	  <a href="{{ dest.url }}">{{ dest.title }}</a>
-	  {%- unless forloop.last -%}
-	  <span class="nav-divider" />
-	  {%- endunless -%}
-	</li>
-	{% endfor %}
-      </ol>
-    </nav>
+	<nav>
+	    <ul>
+		{% for dest in site.data.navigation %}
+		<li>
+		    <a href="{{ dest.url }}">{{ dest.title }}</a>
+		</li>
+		{% endfor %}
+	    </ul>
+	</nav>
 
-    {{ content }}
-  </body>
+	{{ content }}
+    </body>
 </html>

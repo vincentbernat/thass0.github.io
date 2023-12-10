@@ -235,8 +235,6 @@ I hope this post managed to convey my enthusiasm about the elegance of paring by
 
 ---
 
-<br />
-
 [^1]: I used [Quiver](https://q.uiver.app/) to create the diagrams. It has an option to embed diagrams as Iframes, but I decided not to, because I like how reliable and simple plain images are.
 
 [^2]: The curly braces denote zero or more repititons of what's inside them. A character in quotes refers to that literal character. The `num` production rule/token is not included in the grammar. It refers to a numeric literal.
