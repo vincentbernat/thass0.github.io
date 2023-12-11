@@ -102,9 +102,9 @@ n/*************************/
 
 html {
     --glow-color: rgba(255, 239, 0, 0.8);
-    --text-color: #000000;
+    --text-color: #111;
     --background-color: #ffffff;
-    --link-color: #0000ff;
+    --link-color: #0000f0;
     --link-interact-color: #000080;
     --table-border-color: #e5e5e5;
     --table-background-color: #f9f9f9;
@@ -315,11 +315,12 @@ nav li:last-child::after {
 /* Code */
 /********/
 
+/* Code blocks. */
 pre {
     background-color: var(--code-background-color);
+    border-color: var(--code-border-color);
     overflow: scroll;
     padding: 0.5em;
-    border-color: var(--code-border-color);
     border-style: solid;
     border-width: 0.12em 0em;
     line-height: 0.85em;
@@ -327,4 +328,12 @@ pre {
 
 code {
     font-size: 15px;
+}
+
+/* Inline code. */
+code:not(pre code) {
+    background-color: var(--code-background-color);
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 0.5px 3px;
 }
