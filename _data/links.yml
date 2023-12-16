@@ -32,6 +32,10 @@
       url: https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html
 - title: Compilers
   links:
+    - title: Lambda The Ultimate
+      url: http://lambda-the-ultimate.org
+    - title: My First Language Frontend with LLVM Tutorial
+      url: https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html
     - title: Compiler Building Tutorial
       url: https://www.stack.nl/~marcov/compiler.pdf
     - title: Crafting Interpreters
