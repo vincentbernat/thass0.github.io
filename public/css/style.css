@@ -41,7 +41,7 @@
 }
 
 
-n/*************************/
+/*************************/
 /* Playfair Display font */
 /*************************/
 
@@ -118,6 +118,7 @@ html {
 
 a:link, a:visited {
     color: var(--link-color);
+    text-decoration: underline dotted;
 }
 
 a:hover, a:active {
@@ -125,7 +126,8 @@ a:hover, a:active {
 }
 
 a:hover {
-    text-shadow: 0 0 7px var(--glow-color);
+    /* text-shadow: 0 0 7px var(--glow-color); */
+    text-decoration: underline solid;
 }
 
 body {
@@ -279,6 +281,12 @@ nav li:last-child::after {
     font-weight: bold;
     font-size: 2em;
     margin: 0.48em;
+    text-decoration: underline solid;
+}
+
+.masthead a:hover, .masthead a:active {
+    /* Overwrite the effect hover has on the link's color. */
+    color: var(--link-color);
 }
 
 
