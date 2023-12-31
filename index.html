@@ -7,7 +7,8 @@ title: Home
 
 <table class="posts">
     <tbody>
-	{% for post in site.posts %}
+	{% assign all_posts = site.posts | concat: site.data.gists | sort: "date" | reverse %}
+	{%- for post in all_posts -%}
 	<tr>
 	    <td>
 		<time datetime="{{ post.date | date: "%Y-%m-%d" }}">
@@ -15,9 +16,18 @@ title: Home
 		</time>
 	    </td>
 	    <td>
-		<a href="{{ post.url }}">{{ post.title }}</a>
+		{%- if post.gist_url -%}
+			<a href="{{ post.gist_url }}">{{ post.title }}</a>
+			{%- if post.is_foreign -%}
+				<span> (Foreign Gist)</span>
+			{%- else -%}
+				<span> (Gist)</span>
+			{%- endif -%}
+		{%- else -%}
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		{%- endif -%}
 	    </td>
 	</tr>
-	{% endfor %}
+	{%- endfor -%}
     </tbody>
 </table>
