@@ -3,7 +3,7 @@ layout: post
 title: Logarithm Headmath
 ---
 
-This post was originally inspired by <a href="https://two-wrongs.com/learning-some-logarithms.html">learning some logarithms</a> by kqr. Just like his, post it's about the excitement of discovery, and I hope to present some of the knowledge that I have gathered in an approachable way. Some parts are quite math-heavy, but they are not meant to be a formally rigid study of the topics at hand. Rather, their purpose is to be insightful and practical.
+<small>This post was originally inspired by <a href="https://two-wrongs.com/learning-some-logarithms.html">learning some logarithms</a> by kqr. Just like his, post it's about the excitement of discovery, and I hope to present some of the knowledge that I have gathered in an approachable way. Some parts are quite math-heavy, but they are not meant to be a formally rigid study of the topics at hand. Rather, their purpose is to be insightful and practical.</small>
 
 Logarithm headmath is fun. I have become fascinated by the ability to calculate logarithmic functions in one's head. To me, logarithms have always felt like a black box that couldn't be conquered. They are a fundamental building block of mathematics. Yet every time I saw a logarithmic equation, I was quick to grab my calculator instead of solving the equation by hand. Over the last half year, I have spent some time improving my understanding of logarithms and learning how to compute the results of logarithmic equations by hand. Here is how I did it.
 

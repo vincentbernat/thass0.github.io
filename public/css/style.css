@@ -103,6 +103,7 @@
 html {
     --glow-color: rgba(255, 239, 0, 0.8);
     --text-color: #111;
+    --small-color: #5a5a5a;
     --background-color: #ffffff;
     --link-color: #0000f0;
     --link-interact-color: #000080;
@@ -187,6 +188,10 @@ hr {
 
 img {
     max-width: 400px;
+}
+
+small {
+    color: var(--small-color);
 }
 
 @media (max-width: 400px) {
