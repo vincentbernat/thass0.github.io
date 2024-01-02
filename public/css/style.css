@@ -141,6 +141,10 @@ body {
     text-align: justify;
 }
 
+.post-title {
+    margin-bottom: 0em;
+}
+
 h1, h2, h3, h4, h5, h6 {
     text-align: left;
     text-rendering: optimizeLegibility;
@@ -166,6 +170,7 @@ h1:hover .octicon, h2:hover .octicon, h3:hover .octicon, h4:hover .octicon, h5:h
   visibility: visible;
 }
 
+/* Icons for links on headings */
 .octicon {
   fill: currentColor;
   padding: 0;
