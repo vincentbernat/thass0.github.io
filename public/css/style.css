@@ -104,6 +104,7 @@ html {
     --glow-color: rgba(255, 239, 0, 0.8);
     --text-color: #111;
     --small-color: #5a5a5a;
+    --note-color: #048c00;
     --background-color: #ffffff;
     --link-color: #0000f0;
     --link-interact-color: #000080;
@@ -192,6 +193,17 @@ img {
 
 small {
     color: var(--small-color);
+}
+
+/* Notes to reader */
+.note-to-reader {
+    padding-left: 0.6em;
+    border-left: 3px solid var(--note-color);
+}
+
+.note-to-reader::before {
+    color: var(--note-color);
+    content: "NOTE: ";
 }
 
 @media (max-width: 400px) {
