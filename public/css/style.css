@@ -203,7 +203,7 @@ small {
 
 .note-to-reader::before {
     color: var(--note-color);
-    content: "NOTE: ";
+    content: "NOTE. ";
 }
 
 @media (max-width: 400px) {
