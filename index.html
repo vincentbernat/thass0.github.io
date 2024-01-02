@@ -7,7 +7,7 @@ title: Home
 
 <table class="posts">
     <tbody>
-	{% assign all_posts = site.posts | concat: site.data.gists | sort: "date" | reverse %}
+    {%- assign all_posts = site.data.gists | concat: site.posts | sort: "date" | reverse -%}
 	{%- for post in all_posts -%}
 	<tr>
 	    <td>

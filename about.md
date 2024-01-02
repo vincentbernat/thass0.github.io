@@ -9,6 +9,6 @@ I'm a programmer and student from Germany. I'm drawn to the joy and excitement o
 
 Here, I write about different things I learn along the way, problems I solve, or other potentially only semi-related thoughts I have.
 
-You can find the things I build on my [GitHub profile](https://github.com/d4ckard). The fastest way to contact me is probably over [Discord](https://discordapp.com/users/566594351522906123) or <a href="mailto:{{ site.author.email }}">email</a>.
+You can find the things I build on my [GitHub profile](https://github.com/d4ckard). The fastest way to contact me is probably via <a href="mailto:{{ site.author.email }}">email</a> or over [Discord](https://discordapp.com/users/566594351522906123).
 
-I still got to school and will graduate only next year. I am looking for opportunities on what to do next. Feel free to reach out, even just to chat : D
+I'll graduate high school this summer. I am looking to see what's next. Feel free to reach out, even just to chat : D
