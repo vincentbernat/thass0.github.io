@@ -1,5 +1,5 @@
 title: 'thasso.xyz'
-email: 'd4kd@proton.me'
+email: 'thassilo.schulze@proton.me'
 author: Thassilo Schulze
 description: >-
   My personal blog about problems I find intriguing. I would love to hear from
@@ -8,7 +8,7 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thasso.xyz"
 twitter_username: d4kdd
-github_username: d4ckard
+github_username: thass0
 
 plugins:
   - jekyll-feed

@@ -3,7 +3,7 @@ layout: post
 title: Can you use a class in C?
 ---
 
-Recently, I've been [working on a C debugger](https://github.com/d4ckard/spray). This requires reading and processing the DWARF debugging information that's part of the binary. Since this is a rather complex task, I figured I  might use a library that exports a nice interface to the debugging information.
+Recently, I've been [working on a C debugger](https://github.com/thass0/spray). This requires reading and processing the DWARF debugging information that's part of the binary. Since this is a rather complex task, I figured I  might use a library that exports a nice interface to the debugging information.
 
 One such library that I found early on was [libelfin](https://github.com/aclements/libelfin). It wasn't perfect from that start because it is a bit dated now, only supporting DWARF 4 and missing features from the newer DWARF 5 standard, but I thought that I could work around this. The bigger problem was that libelfin is written in C++ while most the debugger is written in C.
 
@@ -99,7 +99,7 @@ void del_rational(void **rp) {
 }
 
 ```
-The trick is to **allocate instances on heap and then pass them around as `void` pointers**. We use C's `malloc` instead of the `new` operator because the `new` operator is a C++ only feature which raises a linker error. A good way to improve type safety is to `typedef` an opaque type to represent the class on the C side, as suggested in [this reply](https://github.com/d4ckard/blog-code/issues/1#issue-1848643298). This is the approach that we'll be using later on, so keep on reading. Alternatively, if you have control over all of the C++ code (i.e. you don't just wrap a library) you could follow [this Stack Overflow answer](https://stackoverflow.com/a/7281477) too.
+The trick is to **allocate instances on heap and then pass them around as `void` pointers**. We use C's `malloc` instead of the `new` operator because the `new` operator is a C++ only feature which raises a linker error. A good way to improve type safety is to `typedef` an opaque type to represent the class on the C side, as suggested in [this reply](https://github.com/thass0/blog-code/issues/1#issue-1848643298). This is the approach that we'll be using later on, so keep on reading. Alternatively, if you have control over all of the C++ code (i.e. you don't just wrap a library) you could follow [this Stack Overflow answer](https://stackoverflow.com/a/7281477) too.
 
 Now, ignoring how incredibly unsafe all of this is, there is a bigger problem we must face: this is not even close to compiling!
 The reason for this is that when we `#include "rational.h"` into `main.c`, we essentially copy all the contents of `rational.h` into the C source file. This means that we suddenly present the C compiler with a class declaration and other things that it doesn't understand because they are part of a totally different language.
@@ -176,7 +176,13 @@ In addition to that we now replace all `void *` with `Rational *`. This will all
 
 # Linking the C++ standard library
 
-Above, we used `malloc` and a cast to allocate the instance of `Rational` to prevent a linker error later on. If we had used `new` and `delete` instead (which is the proper C++ way), we would have gotten linker errors like this one: ```rational.cc:(.text+0x15): undefined reference to `operator new(unsigned long)'```. Usually in a C++ program, this issue doesn't arise because `new` and `delete` are provided in the C++ standard library. The problem is that we used a C compiler to build the executable, which doesn't link the C++ standard library by default. The solution is to **pass the linker flag `-lstdc++` to the compiler explicitly**.
+Above, we used `malloc` and a cast to allocate the instance of `Rational` to prevent a linker error later on. If we had used `new` and `delete` instead (which is the proper C++ way), we would have gotten linker errors like this one:
+
+```
+rational.cc:(.text+0x15): undefined reference to `operator new(unsigned long)'
+```
+
+Usually in a C++ program, this issue doesn't arise because `new` and `delete` are provided in the C++ standard library. The problem is that we used a C compiler to build the executable, which doesn't link the C++ standard library by default. The solution is to **pass the linker flag `-lstdc++` to the compiler explicitly**.
 
 With `new` we can also use normal C++ constructors, making everything more concise and safe:
 ```c++
@@ -226,7 +232,9 @@ public:
 
 // ...
 ```
+
 Since we know now that the constructor might throw, we catch all exceptions in the wrapper and return a `nullptr` in case of an exception. In general, it's often a good idea to catch anything and return a generic error value such as null. In addition to that, you could add infinitely more complex error-handling schemes at the language boundary.
+
 ```c++
 // rational.cc
 #include "rational.h"
@@ -241,9 +249,10 @@ extern "C" Rational *make_rational(int numer, int denom) {
   }
 }
 ```
+
 In such a simple case it's also feasible to check if the denominator is 0 in `make_rational` but that doesn't apply to more realistic examples.
 
-You can find all the code for this post [on my GitHub](https://github.com/d4ckard/blog-code/tree/main/2023-08-11-can-you-use-a-class-in-c).
+You can find all the code for this post [on my GitHub](https://github.com/thass0/blog-code/tree/main/2023-08-11-can-you-use-a-class-in-c).
 
 # Conclusion
 

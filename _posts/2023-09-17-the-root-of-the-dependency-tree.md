@@ -3,7 +3,7 @@ layout: post
 title: The Root of the Dependency Tree
 ---
 
-The hobby debugger I am working on, [Spray](https://github.com/d4ckard/spray), features custom syntax highlighting of C source code. To implement this, I had to recursively parse all the type definitions in the current source file and in its dependencies.
+The hobby debugger I am working on, [Spray](https://github.com/thass0/spray), features custom syntax highlighting of C source code. To implement this, I had to recursively parse all the type definitions in the current source file and in its dependencies.
 
 [C is not a context-free language](https://eli.thegreenplace.net/2011/05/02/the-context-sensitivity-of-cs-grammar-revisited), which leads to the so-called typedef-name problem [^1]. The problem is that `typedef` can be used to make types look like regular identifiers. This creates some situations where context is needed to determine whether the given identifier is a type. Since types and identifiers should be highlighted with different colors, I had to get that context.
 
