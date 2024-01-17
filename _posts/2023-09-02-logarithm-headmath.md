@@ -412,7 +412,7 @@ With this post, I hope to share some of the joyful moments of insight I felt as 
 
 [^1]: For one, many students dislike this sort of learning so much that they completely lose interest in math.
 
-[^2]: In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^1 = 16$.
+[^2]: In fact there are only [two distinct numbers n and m](https://keith-mcnulty.medium.com/only-one-pair-of-distinct-integers-satisfy-this-equation-76ea45469a96) that fulfill the requirement that $n^m = m^n$ which are $2^4 = 4^2 = 16$.
 
 [^3]: Scholl, W., & Drews, R. (1997). <cite>Handbuch Mathematik</cite>. Falken.
 
