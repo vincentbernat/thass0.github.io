@@ -195,6 +195,12 @@ small {
     color: var(--small-color);
 }
 
+/* Used by books.html */
+.book-ref:target {
+    text-shadow: 0 0 10px var(--glow-color);
+    text-decoration: underline;
+}
+
 /* Notes to reader */
 .note-to-reader {
     padding-left: 0.6em;

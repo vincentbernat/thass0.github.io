@@ -1,22 +1,23 @@
-# This list is displayed in the website in exactly the order
-# that  is used here. So put the latest year at the top of
-# this file, and the latest reads at the top of the `read`
-# list.
+# In general, most recent reads are first.
+# To mention which book on the list referred
+# to a specific read, put the books name behind
+# the `referred_by` key.
 
 - year: 2024
   read:
-    - title: »Cancel Culture« – Ende der Aufklärung?
+    - title: "»Cancel Culture« – Ende der Aufklärung?"
       author: Julian Nida-Rümelin
     - title: Imagining Numbers
       author: Barry Mazur
+      referred_by: "Love & Math"
 
 - year: 2023
   read:
     - title: The Particle Garden
       author: Gordon L. Kane
-    - title: 'Love & Math'
+    - title: "Love & Math"
       author: Edward Frenkel
-    - title: 'DMT: The Spirit Molecule'
+    - title: "DMT: The Spirit Molecule"
       author: Dr. Rick Strassman
     - title: Anarchy, State, and Utopia
       author: Robert Nozick
@@ -28,7 +29,7 @@
       author: John von Neumann
     - title: The End of Faith
       author: Sam Harris
-    - title: 1984
+    - title: "1984"
       author: George Orwell
     - title: Die Verwandlung
       author: Franz Kafka
