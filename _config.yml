@@ -7,7 +7,6 @@ description: >-
   about page</a>.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://thasso.xyz"
-twitter_username: d4kdd
 github_username: thass0
 
 plugins:
