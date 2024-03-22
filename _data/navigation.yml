@@ -2,10 +2,6 @@
   url: /
 - title: About
   url: /about.html
-- title: Books
-  url: /books.html
-- title: Links
-  url: /links.html
 - title: RSS
   url: /feed.xml
 - title: GitHub
