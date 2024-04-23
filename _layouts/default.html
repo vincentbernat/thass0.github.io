@@ -9,17 +9,7 @@ layout: compress
 
     <body>
       <a href="/"><img class="masthead" src="/public/heading.png"></a>
-
-	<nav>
-	    <ul>
-		{% for dest in site.data.navigation %}
-		<li>
-		    <a href="{{ dest.url }}">{{ dest.title }}</a>
-		</li>
-		{% endfor %}
-	    </ul>
-	</nav>
-
-	{{ content }}
+      <hr />
+      {{ content }}
     </body>
 </html>

@@ -1,13 +1,9 @@
 title: 'thasso.xyz'
-email: 'thassilo.schulze@proton.me'
-author: Thassilo Schulze
-description: >-
-  My personal blog about problems I find intriguing. I would love to hear from
-  you! Feel free to reach out through my <a href="https://thasso.xyz/about/">
-  about page</a>.
+email: 'thassilo@thasso.xyz'
+author: 'Thassilo Schulze'
+description: 'My personal blog about things I find interesting. Hit me up!'
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://thasso.xyz"
-github_username: thass0
+url: 'https://thasso.xyz'
 
 plugins:
   - jekyll-feed
