@@ -1,101 +1,5 @@
 @charset "UTF-8";
 
-/*******************************/
-/* ET-Book font from Tufte CSS */
-/*******************************/
-
-@font-face {
-    font-family: "et-book";
-    src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
-    src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "et-book";
-    src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
-    src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "et-book";
-    src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
-    src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "et-book-roman-old-style";
-    src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
-    src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-/*************************/
-/* Playfair Display font */
-/*************************/
-
-/* playfair-display-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  src: url('playfair-display/playfair-display-v36-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('playfair-display/playfair-display-v36-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
-
-/* playfair-display-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 500;
-  src: url('playfair-display/playfair-display-v36-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('playfair-display/playfair-display-v36-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
-
-/* playfair-display-500italic - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 500;
-  src: url('playfair-display/playfair-display-v36-latin-500italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('playfair-display/playfair-display-v36-latin-500italic.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
-
-/* playfair-display-800 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 800;
-  src: url('playfair-display/playfair-display-v36-latin-800.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('playfair-display/playfair-display-v36-latin-800.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
-
-/* playfair-display-800italic - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 800;
-  src: url('playfair-display/playfair-display-v36-latin-800italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-       url('playfair-display/playfair-display-v36-latin-800italic.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
-
-
 /**************/
 /* Base style */
 /**************/
@@ -114,13 +18,14 @@ html {
     --code-border-color: #606060;
  
     font-size: 21px;
+    font-family: serif;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
 a:link, a:visited {
     color: var(--link-color);
-    text-decoration: underline dotted;
+    text-decoration: underline;
 }
 
 a:hover, a:active {
@@ -128,13 +33,10 @@ a:hover, a:active {
 }
 
 a:hover {
-    /* text-shadow: 0 0 7px var(--glow-color); */
     text-decoration: underline solid;
 }
 
 body {
-    /* Font */
-    font-family: et-book, Georgia, serif;
     /* Center primary content */
     width: 87.5%;
     margin-left: auto;
@@ -273,7 +175,6 @@ footer {
 nav {
     border-bottom: 1px solid;
     text-align: center;
-    font-family: Playfair Display, Georgia, serif;
 }
 
 nav ul {
@@ -294,28 +195,14 @@ nav li:last-child::after {
     content: none;
 }
 
-
 /************/
 /* Masthead */
 /************/
 
 .masthead {
-    text-align: center;
-    /* Yellow glow */
-    text-shadow: 0 0 10px var(--glow-color);
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 2em;
-    margin: 0.48em;
-    text-decoration: underline solid;
+    margin-top: 30px;
+    max-width: 240px;
 }
-
-.masthead a:hover, .masthead a:active {
-    /* Overwrite the effect hover has on the link's color. */
-    color: var(--link-color);
-}
-
 
 /**************/
 /* Post index */
