@@ -404,8 +404,6 @@ $$
 
 With this post, I hope to share some of the joyful moments of insight I felt as I delved deeper into understanding logarithms. Here, I have focused mainly on how to deal with logarithmic equations and how to solve them manually. There is much more to know about logarithms, about their history, their modern use, and especially their connection to the exponential function. Still, I have tried to provide comprehensive explanations, and I hope you found them insightful.
 
-[Feel free to contact me]({{ '/about' | absolute_url }}) if you have any questions or suggestions. I'm always curious about your feedback. Also, if you find any mistakes, I would be grateful if you could point them out so I can correct them.
-
 ---
 <!-- Place the share notice before the footnotes, since most people
 	are not going to scroll past the footnotes -->
