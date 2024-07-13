@@ -16,19 +16,21 @@ html {
     --table-background-color: #f9f9f9;
     --code-background-color: #f3f3f3;
     --code-border-color: #606060;
- 
+
     font-size: 21px;
     font-family: serif;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: var(--link-color);
     text-decoration: underline;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     color: var(--link-interact-color);
 }
 
@@ -49,7 +51,12 @@ body {
     margin-bottom: 0em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-align: left;
     text-rendering: optimizeLegibility;
     font-weight: normal;
@@ -59,26 +66,40 @@ article h1 {
     border-bottom: 1px solid;
 }
 
-article h2, article h3, article h4, article h5, article h6 {
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
     text-decoration-line: underline;
     text-decoration-style: solid;
     text-decoration-color: currentcolor;
     text-decoration-thickness: 1px;
 }
 
-h1 .octicon, h2 .octicon, h3 .octicon, h4 .octicon, h5 .octicon, h6 .octicon  {
-  visibility: hidden;
+h1 .octicon,
+h2 .octicon,
+h3 .octicon,
+h4 .octicon,
+h5 .octicon,
+h6 .octicon {
+    visibility: hidden;
 }
 
-h1:hover .octicon, h2:hover .octicon, h3:hover .octicon, h4:hover .octicon, h5:hover .octicon, h6:hover .octicon {
-  visibility: visible;
+h1:hover .octicon,
+h2:hover .octicon,
+h3:hover .octicon,
+h4:hover .octicon,
+h5:hover .octicon,
+h6:hover .octicon {
+    visibility: visible;
 }
 
 /* Icons for links on headings */
 .octicon {
-  fill: currentColor;
-  padding: 0;
-  vertical-align: middle;
+    fill: currentColor;
+    padding: 0;
+    vertical-align: middle;
 }
 
 hr {
@@ -95,6 +116,11 @@ img {
     display: block;
 }
 
+.screenshot {
+    max-width: 100%;
+    width: 70%;
+}
+
 small {
     color: var(--small-color);
 }
@@ -102,26 +128,26 @@ small {
 /* Footer stuff */
 
 footer {
-     --1: 1px;
-     --2: 1.3px;
-     --3: 1.8px;
-     --4: 2.5px;
-     --5: 3.3px;
-     --6: 4.5px;
-     --7: 6px;
-     --8: 8.2px;
-     --9: 11px;
-     --10: 14.9px;
-     --11: 20.1px;
-     --12: 27px;
-     --13: 40.4px;
-     --14: 54.6px;
-     --15: 150px;
+    --1: 1px;
+    --2: 1.3px;
+    --3: 1.8px;
+    --4: 2.5px;
+    --5: 3.3px;
+    --6: 4.5px;
+    --7: 6px;
+    --8: 8.2px;
+    --9: 11px;
+    --10: 14.9px;
+    --11: 20.1px;
+    --12: 27px;
+    --13: 40.4px;
+    --14: 54.6px;
+    --15: 150px;
 }
 
 .black-box {
-     width: 100%;
-     background-color: var(--text-color);
+    width: 100%;
+    background-color: var(--text-color);
 }
 
 .white-box {
@@ -142,7 +168,7 @@ footer {
 
 @media (max-width: 400px) {
     img {
-	    max-width: 100%
+        max-width: 100%;
     }
 
     body {
@@ -152,19 +178,19 @@ footer {
 
 /* Tables from Poole */
 .pretty-table {
-  margin-bottom: 1rem;
-  width: 100%;
-  border: 1px solid var(--table-border-color);
-  border-collapse: collapse;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid var(--table-border-color);
+    border-collapse: collapse;
 }
 .pretty-table td,
 .pretty-table th {
-  padding: .25rem .5rem;
-  border: 1px solid var(--table-border-color);
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--table-border-color);
 }
 .pretty-table tbody tr:nth-child(odd) td,
 .pretty-table tbody tr:nth-child(odd) th {
-  background-color: var(--table-background-color);
+    background-color: var(--table-background-color);
 }
 
 /************/
@@ -206,24 +232,23 @@ footer {
     }
 
     .posts {
-	border-collapse: collapse;
-	width: 100%;
-	border-style: solid;
-	border-width: 1px 0;
-	border-color: var(--text-color);
+        border-collapse: collapse;
+        width: 100%;
+        border-style: solid;
+        border-width: 1px 0;
+        border-color: var(--text-color);
     }
- 
+
     .posts tr {
-	border-bottom: 1px solid var(--text-color);
+        border-bottom: 1px solid var(--text-color);
     }
 
     .posts td,
     .posts th {
-	padding-top: 0.3em;
-	padding-bottom: 0.3em;
-    }    
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }
 }
-
 
 /********/
 /* Code */
